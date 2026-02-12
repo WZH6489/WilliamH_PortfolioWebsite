@@ -38,6 +38,17 @@ if (copyEmailBtn && contactEmailDisplay) {
   });
 }
 
+// Project cards: clicking the card (not a link) goes to details/case study page
+document.querySelectorAll(".project-card").forEach((card) => {
+  card.style.cursor = "pointer";
+  card.addEventListener("click", (e) => {
+    if (e.target.closest("a")) return;
+    const detailsLink = card.querySelector('a[href*="case-study"]');
+    const url = detailsLink ? detailsLink.getAttribute("href") : "case-study.html";
+    if (url) window.location.href = url;
+  });
+});
+
 // Smooth scroll for nav links and anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (e) => {

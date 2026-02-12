@@ -125,15 +125,21 @@ a.logo-and-name {
   width: 100%;
 }
 
-/* Download Resume in nav: text fits inside the primary button border */
+/* Nav primary button: compact so "View Resume" fits without crowding */
 .site-header .nav a.btn.primary {
-  padding: 7px 18px;
+  padding: 6px 14px;
   font-size: 12px;
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
 .site-header .nav a.btn.primary::after {
   display: none;
+}
+
+/* Nav secondary "Resume" link: compact to sit neatly next to View Resume */
+.site-header .nav a.btn.secondary {
+  padding: 6px 12px;
+  font-size: 12px;
 }
 
 .theme-toggle {
@@ -486,6 +492,7 @@ a.logo-and-name {
   border-bottom: 1px solid var(--border-subtle);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   min-height: 0;
+  cursor: pointer;
 }
 .project-card .project-meta {
   margin-top: auto;
@@ -845,6 +852,463 @@ a.logo-and-name {
 
   .hero h1 {
     font-size: 24px;
+  }
+}
+
+/* ----- Case study page ----- */
+.case-study-main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding-top: 8px;
+}
+
+.case-study-back {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--text-soft);
+  text-decoration: none;
+  margin-bottom: 16px;
+  transition: color 0.16s ease-out;
+}
+.case-study-back:hover {
+  color: var(--text);
+}
+
+.case-study-header {
+  margin-bottom: 32px;
+}
+
+.case-study-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.case-study-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-softer);
+}
+
+.case-study-tech {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.case-study-header h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.case-study-lead {
+  margin: 0 0 16px;
+  font-size: 15px;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.case-study-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.case-study-hero-image {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  margin-bottom: 40px;
+  filter: saturate(0.88);
+}
+
+.case-study-hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: middle;
+}
+
+.case-study-body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.case-study-block h2 {
+  margin: 0 0 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.case-study-block p,
+.case-study-block li {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.case-study-block ul {
+  margin: 0 0 8px;
+  padding-left: 20px;
+}
+
+.case-study-block ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Project timeline inside case study */
+.case-study-timeline {
+  position: relative;
+  padding-left: 24px;
+  margin-top: 16px;
+}
+
+.case-study-timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--border-subtle);
+  border-radius: 1px;
+}
+
+.case-study-timeline-item {
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.case-study-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.case-study-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  border: 2px solid var(--border-subtle);
+  box-shadow: 0 0 0 2px var(--bg);
+}
+
+.case-study-timeline-date {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-softer);
+  margin-bottom: 4px;
+}
+
+.case-study-timeline-content h3 {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.case-study-timeline-content p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.case-study-diagram {
+  margin: 16px 0;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.case-study-diagram img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.case-study-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 16px 0;
+}
+
+.case-study-gallery figure {
+  margin: 0;
+}
+
+.case-study-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  display: block;
+}
+
+.case-study-gallery figcaption {
+  font-size: 12px;
+  color: var(--text-softer);
+  margin-top: 6px;
+}
+
+.case-study-footer {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ----- Resume page ----- */
+.resume-main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding-top: 8px;
+}
+
+.resume-intro h1 {
+  margin: 0 0 4px;
+  font-size: clamp(1.5rem, 3.5vw, 1.85rem);
+  font-weight: 600;
+}
+
+.resume-tagline {
+  margin: 0 0 12px;
+  font-size: 14px;
+  color: var(--text-soft);
+}
+
+.resume-summary {
+  margin: 0 0 14px;
+  font-size: 14px;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.resume-contact-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.resume-contact-inline a {
+  color: var(--text-soft);
+  text-decoration: none;
+  transition: color 0.16s ease-out;
+}
+.resume-contact-inline a:hover {
+  color: var(--text);
+}
+
+.resume-section {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.resume-section h2 {
+  margin: 0 0 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.resume-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.resume-item {
+  padding: 0;
+}
+
+.resume-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
+  margin-bottom: 6px;
+}
+
+.resume-item-meta strong {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.resume-item-meta span {
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.resume-dates {
+  color: var(--text-softer);
+  font-size: 12px;
+}
+
+.resume-item ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.resume-item ul li {
+  margin-bottom: 2px;
+}
+
+.resume-item p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+.resume-projects,
+.resume-awards {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.resume-projects li,
+.resume-awards li {
+  margin-bottom: 8px;
+}
+
+.resume-projects a {
+  color: var(--text-soft);
+  text-decoration: none;
+  transition: color 0.16s ease-out;
+}
+.resume-projects a:hover {
+  color: var(--text);
+}
+
+.resume-download-cta {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ----- Awards section (home) ----- */
+.awards-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.awards-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.awards-item {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.awards-meta {
+  color: var(--text-softer);
+  font-size: 12px;
+}
+
+/* ----- Journey timeline (home) ----- */
+.journey-timeline {
+  position: relative;
+  padding-left: 24px;
+  margin-top: 20px;
+}
+
+.journey-timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--border-subtle);
+  border-radius: 1px;
+}
+
+.journey-item {
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.journey-item:last-child {
+  padding-bottom: 0;
+}
+
+.journey-dot {
+  position: absolute;
+  left: -24px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg-soft);
+  border: 2px solid var(--border-subtle);
+  box-shadow: 0 0 0 2px var(--bg);
+}
+
+.journey-content {
+  margin: 0;
+}
+
+.journey-date {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-softer);
+  margin-bottom: 4px;
+}
+
+.journey-content h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.journey-content p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .case-study-gallery {
+    grid-template-columns: 1fr;
   }
 }
 
