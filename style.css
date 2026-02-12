@@ -1,10 +1,14 @@
 :root {
-  --bg: #020202;
-  --bg-soft: #050505;
+  --bg: #0d0d0d;
+  --bg-soft: #121212;
   --text: #f9f9f9;
   --text-soft: #a1a1aa;
   --text-softer: #71717a;
   --border-subtle: #262626;
+  --glow-primary: 0 8px 32px rgba(88, 28, 135, 0.55), 0 0 48px rgba(88, 28, 135, 0.2);
+  --glow-primary-hover: 0 12px 40px rgba(88, 28, 135, 0.65), 0 0 64px rgba(88, 28, 135, 0.28);
+  --accent-tech: rgba(45, 212, 191, 0.85);
+  --accent-tech-bg: rgba(45, 212, 191, 0.08);
 }
 
 *,
@@ -19,7 +23,7 @@ body {
   padding: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text);
-  background: radial-gradient(circle at top, #111111 0, #000000 55%, #020202 100%);
+  background: radial-gradient(circle at top, #151515 0, #0d0d0d 50%, #0a0a0a 100%);
   min-height: 100%;
 }
 
@@ -39,11 +43,17 @@ body {
 }
 
 .site-header {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border-subtle);
   gap: 20px;
 }
 
@@ -115,10 +125,15 @@ a.logo-and-name {
   width: 100%;
 }
 
-.btn-resume {
-  margin-left: 8px;
-  padding: 6px 14px !important;
-  font-size: 12px !important;
+/* Download Resume in nav: text fits inside the primary button border */
+.site-header .nav a.btn.primary {
+  padding: 7px 18px;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+.site-header .nav a.btn.primary::after {
+  display: none;
 }
 
 .theme-toggle {
@@ -209,24 +224,23 @@ a.logo-and-name {
 .btn.primary {
   background: linear-gradient(120deg, #7c3aed, #4f46e5);
   color: #f9fafb;
-  box-shadow: 0 12px 30px rgba(88, 28, 135, 0.8);
+  box-shadow: var(--glow-primary);
 }
 
 .btn.primary:hover {
   transform: translateY(-1px);
-  box-shadow: 0 16px 34px rgba(88, 28, 135, 0.95);
+  box-shadow: var(--glow-primary-hover);
 }
 
 .btn.secondary {
-  border-color: rgba(148, 163, 184, 0.8);
+  border: 1px solid var(--border-subtle);
   color: var(--text-soft);
-  background: rgba(15, 23, 42, 0.9);
+  background: transparent;
 }
 
 .btn.secondary:hover {
   color: var(--text);
-  border-color: rgba(148, 163, 184, 1);
-  background: radial-gradient(circle at top, rgba(15, 23, 42, 1), rgba(15, 23, 42, 0.3));
+  border-color: var(--text-softer);
 }
 
 .hero-meta {
@@ -239,15 +253,16 @@ a.logo-and-name {
 }
 
 .meta-label {
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--text-softer);
+  letter-spacing: 0.12em;
+  color: var(--text-soft);
   margin-bottom: 4px;
 }
 
 .meta-value {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text);
 }
 
@@ -260,20 +275,22 @@ a.logo-and-name {
 .portrait-placeholder {
   align-self: flex-start;
   border-radius: 999px;
-  background: transparent;
-  border: 1px solid var(--border-subtle);
+  background: linear-gradient(145deg, var(--bg-soft) 0%, var(--bg) 100%);
+  border: 2px solid var(--border-subtle);
   width: 72px;
   height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.9);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .portrait-initials {
-  font-size: 26px;
-  font-weight: 600;
-  color: #f9fafb;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  color: var(--text);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hero-card-body h2 {
@@ -300,9 +317,9 @@ a.logo-and-name {
 }
 
 .section {
-  margin-top: 40px;
-  padding-top: 12px;
-  padding-bottom: 4px;
+  margin-top: 48px;
+  padding-top: 24px;
+  padding-bottom: 8px;
   border-top: 1px solid var(--border-subtle);
 }
 .section,
@@ -322,12 +339,14 @@ a.logo-and-name {
   align-items: baseline;
   justify-content: space-between;
   gap: 16px;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
 }
 
 .section-header h2 {
   margin: 0;
-  font-size: 17px;
+  font-size: clamp(1.35rem, 3.5vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .section-header p {
@@ -466,6 +485,11 @@ a.logo-and-name {
   position: relative;
   border-bottom: 1px solid var(--border-subtle);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 0;
+}
+.project-card .project-meta {
+  margin-top: auto;
+  padding-top: 12px;
 }
 .project-card:hover {
   transform: translateY(-4px);
@@ -520,11 +544,11 @@ a.logo-and-name {
 }
 
 .project-meta {
-  margin-top: 8px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
+  flex-wrap: wrap;
 }
 
 .project-tech {
@@ -537,8 +561,10 @@ a.logo-and-name {
 .project-tech span {
   padding: 3px 8px;
   border-radius: 999px;
-  background: transparent;
-  border: 1px solid var(--border-subtle);
+  background: var(--accent-tech-bg);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  color: var(--accent-tech);
+  font-size: 11px;
 }
 
 .project-links {
@@ -564,7 +590,9 @@ a.logo-and-name {
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
+  gap: 20px;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .skills-column h3 {

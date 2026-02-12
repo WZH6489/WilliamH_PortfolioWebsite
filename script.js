@@ -23,7 +23,7 @@ if (copyEmailBtn && contactEmailDisplay) {
   copyEmailBtn.addEventListener("click", async () => {
     const email = copyEmailBtn.getAttribute("data-email") || "";
     if (!email || email === "you@example.com") {
-      contactEmailDisplay.textContent = "Add your email in data-email";
+      contactEmailDisplay.textContent = "Set data-email on the button";
       return;
     }
     try {
@@ -68,7 +68,7 @@ if (connectForm) {
 
     if (!fromEmail || !subject || !message) return;
 
-    const to = "you@example.com"; // TODO: replace with your real email
+    const to = "you@example.com"; // Replace with your real email (form mailto recipient)
     const bodyLines = [`From: ${fromEmail}`, "", message];
     const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(
       subject
