@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Professional Portfolio</title>
+    <meta
+      name="description"
+      content="Ways to reach out and connect."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <a href="index.html" class="logo-and-name">
+          <div class="logo-circle">Y</div>
+          <div>
+            <div class="name">Your Name</div>
+            <div class="role">Your Role / Tagline</div>
+          </div>
+        </a>
+        <nav class="nav">
+          <a href="about.html">About</a>
+          <a href="experience.html">Experience</a>
+          <a href="projects.html">Projects</a>
+          <a href="skills.html">Skills</a>
+          <a href="contact.html#connect">Get in Touch</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="section">
+          <div class="section-header">
+            <h2>Contact</h2>
+            <p>Ways to reach out or learn more.</p>
+          </div>
+          <div class="contact-grid">
+            <div>
+              <p>
+                Interested in working together or have an opportunity that might
+                be a fit? Use the form below or connect on your preferred platform.
+              </p>
+            </div>
+            <div class="contact-links">
+              <a href="https://www.linkedin.com/in/your-profile" class="contact-item" target="_blank" rel="noreferrer">
+                <span class="contact-label">LinkedIn</span>
+                <span class="contact-value">linkedin.com/in/your-profile</span>
+              </a>
+              <a href="https://github.com/your-handle" class="contact-item" target="_blank" rel="noreferrer">
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">github.com/your-handle</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="connect" class="section section-connect">
+          <div class="section-header">
+            <h2>Let's connect</h2>
+          </div>
+          <form id="connectForm" class="connect-form">
+            <div class="connect-row">
+              <div class="connect-field">
+                <label for="fromEmail">Your email</label>
+                <input
+                  id="fromEmail"
+                  name="fromEmail"
+                  type="email"
+                  required
+                  placeholder="you@example.com"
+                />
+              </div>
+              <div class="connect-field">
+                <label for="subject">Subject</label>
+                <input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  required
+                  placeholder="What would you like to chat about?"
+                />
+              </div>
+            </div>
+            <div class="connect-field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+                placeholder="Share a few details about your project, role, or question."
+              ></textarea>
+            </div>
+            <button type="submit" class="btn primary connect-submit">Send message</button>
+          </form>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <span>© <span id="currentYear"></span> Your Name. All rights reserved.</span>
+        <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer">LinkedIn</a>
+      </footer>
+    </div>
+
+    <audio id="bgMusic" loop preload="auto" aria-hidden="true">
+      <source src="https://cdn.pixabay.com/audio/2022/05/27/audio_3e2f2fa82c.mp3" type="audio/mpeg" />
+    </audio>
+    <button type="button" id="musicToggle" class="music-toggle" aria-label="Toggle background music" title="Toggle music">
+      <span class="music-icon" aria-hidden="true">♪</span>
+    </button>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
