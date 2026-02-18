@@ -1,3 +1,55 @@
+// Custom cursor (desktop only)
+let cursorDot = document.getElementById("cursor-dot");
+let cursorRing = document.getElementById("cursor-ring");
+if (!cursorDot) {
+  cursorDot = document.createElement("div");
+  cursorDot.id = "cursor-dot";
+  cursorDot.className = "cursor-dot";
+  cursorDot.setAttribute("aria-hidden", "true");
+  document.body.prepend(cursorDot);
+}
+if (!cursorRing) {
+  cursorRing = document.createElement("div");
+  cursorRing.id = "cursor-ring";
+  cursorRing.className = "cursor-ring";
+  cursorRing.setAttribute("aria-hidden", "true");
+  document.body.prepend(cursorRing);
+}
+
+const hoverTargets = "a, button, .project-card, .contact-item, .btn";
+
+if (cursorDot && cursorRing && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  document.body.classList.add("custom-cursor");
+  let mouseX = 0, mouseY = 0;
+  let dotX = 0, dotY = 0, ringX = 0, ringY = 0;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  const isHover = (el) => el && (el.matches(hoverTargets) || el.closest(hoverTargets));
+
+  document.addEventListener("mouseover", (e) => {
+    if (isHover(e.target)) cursorRing.classList.add("hover");
+  });
+  document.addEventListener("mouseout", (e) => {
+    if (!isHover(e.relatedTarget)) cursorRing.classList.remove("hover");
+  });
+
+  function animate() {
+    dotX += (mouseX - dotX) * 0.95;
+    dotY += (mouseY - dotY) * 0.95;
+    ringX += (mouseX - ringX) * 0.85;
+    ringY += (mouseY - ringY) * 0.85;
+    const ringScale = cursorRing.classList.contains("hover") ? 1 : 0.5;
+    cursorDot.style.transform = `translate(${dotX}px, ${dotY}px)`;
+    cursorRing.style.transform = `translate(${ringX}px, ${ringY}px) scale(${ringScale})`;
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+
 // Current year
 const currentYearEl = document.getElementById("currentYear");
 if (currentYearEl) {
@@ -6,7 +58,7 @@ if (currentYearEl) {
 
 // Fade-in sections on scroll
 const sections = document.querySelectorAll(".section, .hero");
-const observer = new IntersectionObserver(
+const sectionObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) entry.target.classList.add("is-visible");
@@ -14,7 +66,19 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.06, rootMargin: "0px 0px -30px 0px" }
 );
-sections.forEach((el) => observer.observe(el));
+sections.forEach((el) => sectionObserver.observe(el));
+
+// Fade-up project cards with stagger (when they enter viewport)
+const projectCards = document.querySelectorAll(".project-card");
+const cardObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) entry.target.classList.add("is-visible");
+    });
+  },
+  { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+);
+projectCards.forEach((card) => cardObserver.observe(card));
 
 // Copy email button
 const copyEmailBtn = document.getElementById("copyEmailBtn");
