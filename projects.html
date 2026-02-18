@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css?v=3" />
   </head>
   <body>
     <div class="page">
@@ -24,7 +24,7 @@
             <div class="logo-circle">Y</div>
             <div>
               <div class="name">William Huang</div>
-              <div class="role">Your Role / Tagline</div>
+              <div class="role">First-year SFU-ZJU Computing Science & Fintech Student</div>
             </div>
           </a>
           <nav class="nav">
@@ -45,15 +45,17 @@
           </div>
           <div class="projects-grid">
             <article class="project-card">
+              <div class="project-visual" aria-hidden="true">
+                <img src="https://placehold.co/600x340/1a1a2e/e5e5e5?text=App+Screenshot" alt="" width="600" height="340" />
+              </div>
               <h3>Project Name</h3>
               <p class="project-summary">
-                Add short description: what the project is, who it's for, and what
-                makes it interesting.
+                Short description: what the project is, who it's for, and what makes it interesting.
               </p>
               <ul class="project-points">
-                <li>Add: built with [tech].</li>
-                <li>Add: measurable result.</li>
-                <li>Add: key responsibility.</li>
+                <li>Built with [Tech A], [Tech B], [Tech C].</li>
+                <li>Add measurable result (e.g. improved X by Y%, or used by Z users).</li>
+                <li>Add key responsibility or metric.</li>
               </ul>
               <div class="project-meta">
                 <div class="project-tech">
@@ -68,10 +70,16 @@
             </article>
 
             <article class="project-card">
+              <div class="project-visual" aria-hidden="true">
+                <img src="https://placehold.co/600x340/1a1a2e/e5e5e5?text=Project+Mockup" alt="" width="600" height="340" />
+              </div>
               <h3>Project Name</h3>
               <p class="project-summary">
                 Add short description: problem, solution, and outcome.
               </p>
+              <ul class="project-points">
+                <li>Add metric or outcome if possible.</li>
+              </ul>
               <div class="project-meta">
                 <div class="project-tech">
                   <span>Tech 1</span>
@@ -85,10 +93,16 @@
             </article>
 
             <article class="project-card">
+              <div class="project-visual" aria-hidden="true">
+                <img src="https://placehold.co/600x340/1a1a2e/e5e5e5?text=API+%2F+Backend" alt="" width="600" height="340" />
+              </div>
               <h3>Project Name</h3>
               <p class="project-summary">
                 Add short description for this project.
               </p>
+              <ul class="project-points">
+                <li>Add tech used or outcome.</li>
+              </ul>
               <div class="project-meta">
                 <div class="project-tech">
                   <span>Tech 1</span>
@@ -105,8 +119,11 @@
       </main>
 
       <footer class="site-footer">
-        <span>© <span id="currentYear"></span> William Huang. All rights reserved.</span>
-        <a href="https://www.linkedin.com/in/william-huang-569197310?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noreferrer">LinkedIn</a>
+        <span>© <span id="currentYear"></span> William Huang</span>
+        <div class="footer-links">
+          <a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
       </footer>
     </div>
 
@@ -117,6 +134,6 @@
       <span class="music-icon" aria-hidden="true">♪</span>
     </button>
 
-    <script src="./script.js"></script>
+    <script src="./script.js?v=3"></script>
   </body>
 </html>

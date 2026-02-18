@@ -32,7 +32,7 @@ body {
   padding: 0;
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   color: var(--text);
-  background: linear-gradient(160deg, #120a1c 0%, #0c0612 30%, #140a20 50%, #080410 75%, #120a1a 100%);
+  background: linear-gradient(160deg, #120a1c 0%, #0e0818 20%, #0c0612 40%, #140a20 60%, #0a0510 80%, #120a1a 100%);
   min-height: 100%;
   position: relative;
   overflow-x: hidden;
@@ -62,12 +62,15 @@ body {
     pointer-events: none;
     z-index: 9999;
     opacity: 0;
-    transition: opacity 0.2s ease, transform 0.15s ease-out;
+    visibility: hidden;
+    transition: opacity 0.2s ease, transform 0.15s ease-out, visibility 0s 0.2s;
   }
 
   body.custom-cursor .cursor-dot,
   body.custom-cursor .cursor-ring {
     opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s ease, transform 0.15s ease-out;
   }
 
   .cursor-dot {
@@ -311,9 +314,12 @@ a.logo-and-name {
 .btn.primary {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(120deg, #7c3aed, #4f46e5);
+  background: linear-gradient(120deg, rgba(124, 58, 237, 0.6), rgba(79, 70, 229, 0.5));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #f9fafb;
-  box-shadow: var(--glow-primary), 0 0 15px rgba(124, 58, 237, 0.4);
+  box-shadow: var(--glow-primary), 0 0 15px rgba(124, 58, 237, 0.3);
 }
 
 .btn.primary::after {
@@ -679,8 +685,8 @@ a.logo-and-name {
   padding-top: 12px;
 }
 .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), var(--glow-hover), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.03), var(--glow-hover), 0 0 0 1px rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.12);
 }
 .project-visual {

@@ -124,12 +124,18 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// When landing on index.html#connect (e.g. from "Contact me"), scroll to Let's connect
+// When landing on contact.html#connect, scroll connect section to top of viewport
 if (window.location.hash === "#connect") {
-  const connectSection = document.getElementById("connect");
-  if (connectSection) {
-    connectSection.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+  const scrollConnectToTop = () => {
+    const el = document.getElementById("connect");
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top, left: 0, behavior: "instant" });
+    }
+  };
+  scrollConnectToTop();
+  requestAnimationFrame(scrollConnectToTop);
+  window.addEventListener("load", scrollConnectToTop);
 }
 
 // "Let's connect" form -> open mail client
