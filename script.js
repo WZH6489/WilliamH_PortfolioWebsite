@@ -149,7 +149,7 @@ if (connectForm) {
 
     if (!fromEmail || !subject || !message) return;
 
-    const to = "you@example.com"; // Replace with your real email (form mailto recipient)
+    const to = "williamhuang129@yahoo.com";
     const bodyLines = [`From: ${fromEmail}`, "", message];
     const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(
       subject

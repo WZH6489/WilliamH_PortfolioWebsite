@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delta — Case Study | Portfolio</title>
+    <meta
+      name="description"
+      content="Delta: A career-readiness dashboard built for SystemHacks 2026."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css?v=3" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="site-header">
+        <div class="header-inner">
+          <a href="index.html" class="logo-and-name">
+            <div class="logo-circle"><img src="./images/profile.png" alt="William Huang" /></div>
+            <div>
+              <div class="name">William Huang</div>
+              <div class="role">First-year SFU-ZJU Computing Science & Fintech Student</div>
+            </div>
+          </a>
+          <nav class="nav">
+            <a href="about.html">About</a>
+            <a href="experience.html">Experience</a>
+            <a href="projects.html">Projects</a>
+            <a href="skills.html">Skills</a>
+            <a href="contact.html#connect">Get in Touch</a>
+            <a href="resume.pdf" class="btn primary" target="_blank" rel="noreferrer">View Resume</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="case-study-main">
+        <a href="projects.html" class="case-study-back">← Back to projects</a>
+
+        <header class="case-study-header">
+          <div class="case-study-meta">
+            <span class="case-study-label">SystemHacks 2026 · 24hr Hackathon</span>
+          </div>
+          <ul class="case-study-tech">
+            <li>React</li>
+            <li>Vite</li>
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+          </ul>
+          <h1>Delta</h1>
+          <p class="case-study-lead">
+            A career-readiness dashboard that identifies gaps between SFU's curriculum and industry needs. It calculates a readiness score and provides direct documentation links to help students bridge the professional divide.
+          </p>
+          <div class="case-study-links">
+            <a href="https://devpost.com/software/delta-lkmf4y" class="btn secondary" target="_blank" rel="noopener noreferrer">View on Devpost</a>
+          </div>
+        </header>
+
+        <div class="case-study-hero-image">
+          <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/235/442/datas/original.png" alt="Delta career-readiness dashboard" />
+        </div>
+
+        <div class="case-study-body">
+          <section class="case-study-block">
+            <h2>Inspiration</h2>
+            <p>
+              The inspiration for this project is the growing "University Lag," where the rapid pace of the technology industry often outpaces traditional curriculum. Many students graduate with a degree but lack the specific, modern skills required for 2026 roles. By analyzing the gap between SFU's courses and current industry demands, this project empowers students to take control of their education.
+            </p>
+            <p>
+              We were inspired by the SFU courses API and wanted to find a way to implement it into our project. Additionally, we were confused about future course planning to tailor it into job search and give us a leg up in our endeavours. Therefore, we made a dashboard that indicates which skills are in demand and which courses offer job-ready skills, blending functionality with a smooth, satisfying interface.
+            </p>
+          </section>
+
+          <section class="case-study-block">
+            <h2>What it does</h2>
+            <p>
+              Delta is a career-readiness dashboard designed to help students bridge the gap between their academic studies and the rapidly changing technology industry. The application allows users to select a career path and compare the industry requirements across different years, specifically focusing on the shift toward 2026.
+            </p>
+            <p>
+              By cross-referencing these professional demands with the SFU course database, the tool performs an automated gap analysis. It identifies which skills are currently covered by the curriculum and which ones require independent study. Finally, it provides a quantitative readiness score and suggests official documentation for the missing skills so students can prepare themselves for the workforce effectively.
+            </p>
+          </section>
+
+          <section class="case-study-block">
+            <h2>How we built it</h2>
+            <p>
+              The project was developed using a React frontend initialized with Vite to ensure a fast and responsive user experience. The core logic relies on a custom engine that processes JSON datasets containing years of job requirements and university course descriptions.
+            </p>
+            <p>
+              We implemented fuzzy string matching to connect industry terms with academic course titles, ensuring that minor naming differences did not result in false gaps. The interface was styled using custom CSS to create a professional dashboard environment that includes dynamic progress bars and organized data cards for clear comparison.
+            </p>
+          </section>
+
+          <section class="case-study-block">
+            <h2>Key accomplishments</h2>
+            <ul>
+              <li>Calculated a readiness score for students and provided direct documentation links to help bridge the gap between academic learning and professional expectations.</li>
+              <li>Designed a system that guided users toward relevant resources, improving career preparedness and streamlining access to industry documentation.</li>
+              <li>Created a functional product that can impact how students approach course planning to ready their careers.</li>
+            </ul>
+          </section>
+
+          <section class="case-study-block">
+            <h2>Team</h2>
+            <p>Justin Tan, William Huang, Vincent Zhao</p>
+          </section>
+
+          <div class="case-study-footer">
+            <a href="https://devpost.com/software/delta-lkmf4y" class="btn primary" target="_blank" rel="noopener noreferrer">View project on Devpost</a>
+          </div>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <span>© <span id="currentYear"></span> William Huang. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="./script.js?v=3"></script>
+  </body>
+</html>

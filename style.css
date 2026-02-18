@@ -158,6 +158,14 @@ a.logo-and-name {
   font-weight: 500;
   font-size: 15px;
   border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.logo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .name {
@@ -409,6 +417,13 @@ a.logo-and-name {
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.portrait-placeholder .portrait-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .portrait-initials {
