@@ -3,133 +3,139 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SFU SideQuests — Case Study | Portfolio</title>
-    <meta
-      name="description"
-      content="SFU SideQuests: A gamified campus companion built for JourneyHacks 2026."
-    />
+    <title>SFU SideQuests — Project · William Huang</title>
+    <meta name="description" content="SFU SideQuests — a gamified campus companion built for JourneyHacks 2026." />
+    <meta name="theme-color" content="#14110e" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css?v=3" />
+    <link rel="stylesheet" href="./style.css?v=10" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   </head>
   <body>
-    <div class="page">
-      <header class="site-header">
-        <div class="header-inner">
-          <a href="index.html" class="logo-and-name">
-            <div class="logo-circle"><img src="./images/profile.png" alt="William Huang" /></div>
-            <div>
-              <div class="name">William Huang</div>
-              <div class="role">First-year SFU-ZJU Computing Science & Fintech Student</div>
-            </div>
-          </a>
-          <nav class="nav">
-            <a href="about.html">About</a>
-            <a href="experience.html">Experience</a>
-            <a href="projects.html">Projects</a>
-            <a href="skills.html">Skills</a>
-            <a href="contact.html#connect">Get in Touch</a>
-            <a href="resume.pdf" class="btn primary" target="_blank" rel="noreferrer">View Resume</a>
-          </nav>
-        </div>
-      </header>
+    <a href="#main" class="skip-link">Skip to content</a>
 
-      <main class="case-study-main">
-        <a href="projects.html" class="case-study-back">← Back to projects</a>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a href="index.html" class="mark" aria-label="William Huang — home">
+          <span class="mark-name">William Huang</span>
+          <span class="mark-role">SFU–ZJU · CS &amp; Fintech</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open menu"
+        >
+          <span></span>
+        </button>
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+          <a href="projects.html" class="is-active">Work</a>
+          <a href="experience.html">Experience</a>
+          <a href="about.html">About</a>
+          <a href="skills.html">Practice</a>
+          <a href="contact.html">Contact</a>
+          <a href="resume.pdf" target="_blank" rel="noreferrer" class="ghost-link">Résumé&nbsp;↗</a>
+        </nav>
+      </div>
+    </header>
 
-        <header class="case-study-header">
-          <div class="case-study-meta">
-            <span class="case-study-label">JourneyHacks 2026</span>
-          </div>
-          <ul class="case-study-tech">
-            <li>Figma</li>
-            <li>Canva</li>
-            <li>Git</li>
-            <li>GitHub</li>
-          </ul>
-          <h1>SFU SideQuests</h1>
-          <p class="case-study-lead">
-            A gamified campus companion for SFU students. Discover sidequests (social, academic, fitness, exploration) during time between classes.
+    <main id="main" class="case">
+      <a href="projects.html" class="case-back">←&nbsp; Back to work</a>
+
+      <p class="case-eyebrow">Project · JourneyHacks 2026 · 12h Hackathon</p>
+      <h1>SFU SideQuests</h1>
+      <p class="case-lede">
+        A gamified campus companion. Pickable side-quests across social,
+        academic, fitness and exploration tracks — designed for the time
+        between classes.
+      </p>
+      <ul class="case-tech">
+        <li>Figma</li>
+        <li>UI/UX Design</li>
+        <li>Canva</li>
+        <li>Git</li>
+      </ul>
+      <div class="case-links">
+        <a href="https://devpost.com/software/sfu-sidequest" class="cta" target="_blank" rel="noopener noreferrer">View on Devpost&nbsp;↗</a>
+      </div>
+
+      <figure class="case-hero">
+        <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/149/566/datas/original.png" alt="SFU SideQuests app screenshot" loading="lazy" decoding="async" />
+      </figure>
+
+      <div class="case-gallery">
+        <figure>
+          <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/149/567/datas/original.png" alt="SFU SideQuests — quest selection screen" loading="lazy" decoding="async" />
+          <figcaption>Quest selection</figcaption>
+        </figure>
+        <figure>
+          <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/149/568/datas/original.png" alt="SFU SideQuests — add a quest screen" loading="lazy" decoding="async" />
+          <figcaption>Add a quest</figcaption>
+        </figure>
+        <figure>
+          <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/149/569/datas/original.png" alt="SFU SideQuests — profile screen" loading="lazy" decoding="async" />
+          <figcaption>Profile</figcaption>
+        </figure>
+      </div>
+
+      <div class="case-body">
+        <section class="case-block">
+          <h2>Inspiration</h2>
+          <p>
+            A common complaint about university life is how monotonous the
+            in-between hours can feel. SideQuests was designed so students
+            have small things to do between classes — a way to engage with
+            their community, the campus, and the city around SFU.
           </p>
-          <div class="case-study-links">
-            <a href="https://devpost.com/software/sfu-sidequest" class="btn secondary" target="_blank" rel="noopener noreferrer">View on Devpost</a>
-          </div>
-        </header>
+        </section>
 
-        <div class="case-study-hero-image">
-          <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/149/566/datas/original.png" alt="SFU SideQuests app screenshot" />
+        <section class="case-block">
+          <h2>What it does</h2>
+          <p>
+            Quests sit across social, academic, fitness and exploration
+            tracks, with a custom &ldquo;Add Quest&rdquo; loop so students
+            can contribute their own.
+          </p>
+        </section>
+
+        <section class="case-block">
+          <h2>How we built it</h2>
+          <p>The app was prototyped end-to-end in Figma during a 12-hour build window, with Canva for marketing assets and Git for shared notes. We then delivered a comprehensive project pitch to a panel of industry experts, communicating the technical architecture, design philosophy, and user engagement strategy.</p>
+        </section>
+
+        <section class="case-block">
+          <h2>What we learned</h2>
+          <p>Faster Figma flows, better Git hygiene, and how to scope something so it actually finishes inside the clock.</p>
+        </section>
+
+        <section class="case-block">
+          <h2>Team</h2>
+          <p>William Huang · Vincent Zhao · Justin Tan</p>
+        </section>
+
+        <div class="case-footer">
+          <a href="https://devpost.com/software/sfu-sidequest" class="cta is-primary" target="_blank" rel="noopener noreferrer">View project on Devpost&nbsp;↗</a>
         </div>
+      </div>
+    </main>
 
-        <div class="case-study-gallery">
-          <figure>
-            <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/149/567/datas/original.png" alt="SFU SideQuests screenshot 2" />
-            <figcaption>Screenshot 2</figcaption>
-          </figure>
-          <figure>
-            <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/149/568/datas/original.png" alt="SFU SideQuests screenshot 3" />
-            <figcaption>Screenshot 3</figcaption>
-          </figure>
-          <figure>
-            <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/149/569/datas/original.png" alt="SFU SideQuests screenshot 4" />
-            <figcaption>Screenshot 4</figcaption>
-          </figure>
-        </div>
+    <footer class="bottombar">
+      <div class="bottombar-inner">
+        <span>© <span id="currentYear"></span> William Huang · Vancouver</span>
+        <ul>
+          <li><a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé</a></li>
+        </ul>
+      </div>
+    </footer>
 
-        <div class="case-study-body">
-          <section class="case-study-block">
-            <h2>Inspiration</h2>
-            <p>
-              A common complaint about school life is how monotonous and boring campus life may get. SFU SideQuest was made so that students have activities that they can do between classes as a way to engage with the community, campus and environment around SFU.
-            </p>
-          </section>
-
-          <section class="case-study-block">
-            <h2>What it does</h2>
-            <p>
-              There are challenges, ranging from social, academic, fitness and exploration, all designed for students to engage with their community. There is also a custom "Add Quest" feature to add your own quests.
-            </p>
-          </section>
-
-          <section class="case-study-block">
-            <h2>How we built it</h2>
-            <p>
-              The app/website was made with Figma.
-            </p>
-          </section>
-
-          <section class="case-study-block">
-            <h2>What we learned</h2>
-            <p>
-              We learned how to use Figma, and Git.
-            </p>
-          </section>
-
-          <section class="case-study-block">
-            <h2>Team</h2>
-            <p>William Huang, Vincent Zhao, Justin Tan</p>
-          </section>
-
-          <div class="case-study-footer">
-            <a href="https://devpost.com/software/sfu-sidequest" class="btn primary" target="_blank" rel="noopener noreferrer">View project on Devpost</a>
-          </div>
-        </div>
-      </main>
-
-      <footer class="site-footer">
-        <span>© <span id="currentYear"></span> William Huang. All rights reserved.</span>
-        <div class="footer-links">
-          <a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-      </footer>
-    </div>
-
-    <script src="./script.js?v=3"></script>
+    <script src="./script.js?v=10"></script>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>

@@ -3,373 +3,377 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>William Huang | First Year SFU Student</title>
+    <title>William Huang — Portfolio</title>
     <meta
       name="description"
-      content="Portfolio of William Huang — Your tagline or program."
+      content="William Huang — SFU–ZJU Computing Science & Fintech student. Selected work, experience, and writing at the intersection of code and capital."
     />
+    <meta name="theme-color" content="#14110e" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css?v=3" />
+    <link rel="stylesheet" href="./style.css?v=10" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   </head>
   <body>
-    <div class="page">
-      <header class="site-header">
-        <div class="header-inner">
-          <a href="index.html" class="logo-and-name">
-            <div class="logo-circle"><img src="./images/profile.png" alt="William Huang" /></div>
-            <div>
-              <div class="name">William Huang</div>
-              <div class="role">First-year SFU-ZJU Computing Science & Fintech Student</div>
-            </div>
-          </a>
-          <nav class="nav">
-            <a href="about.html">About</a>
-            <a href="experience.html">Experience</a>
-            <a href="projects.html">Projects</a>
-            <a href="skills.html">Skills</a>
-            <a href="contact.html#connect">Get in Touch</a>
-            <a href="resume.pdf" class="btn primary" target="_blank" rel="noreferrer">View Resume</a>
-          </nav>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a href="index.html" class="mark" aria-label="William Huang — home">
+          <span class="mark-name">William Huang</span>
+          <span class="mark-role">SFU–ZJU · CS &amp; Fintech</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open menu"
+        >
+          <span></span>
+        </button>
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+          <a href="projects.html">Work</a>
+          <a href="experience.html">Experience</a>
+          <a href="about.html">About</a>
+          <a href="skills.html">Practice</a>
+          <a href="contact.html">Contact</a>
+          <a href="resume.pdf" target="_blank" rel="noreferrer" class="ghost-link">Résumé&nbsp;↗</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="shell">
+      <section class="hero reveal">
+        <div class="status-pill">
+          <span class="status-dot" aria-hidden="true"></span>
+          Open to hire
         </div>
-      </header>
+        <p class="kicker"><span class="kicker-num">00</span> — Portfolio · 2026</p>
+        <h1 class="display">
+          Building thoughtful software at the intersection of code and capital.
+        </h1>
+        <div class="hero-grid">
+          <p class="lede">
+            I&rsquo;m William — a BSc Computing Science (SFU) &amp; MFin
+            Financial Technology (ZJU) dual-degree student.
+          </p>
+          <ul class="hero-meta">
+            <li><span class="meta-k">Focus</span><span class="meta-v">CS · Fintech</span></li>
+            <li><span class="meta-k">Based</span><span class="meta-v">Vancouver, CA</span></li>
+            <li><span class="meta-k">Status</span><span class="meta-v">Open to hire</span></li>
+          </ul>
+        </div>
+        <div class="hero-actions">
+          <a href="projects.html" class="cta is-primary">View selected work</a>
+          <a href="resume.pdf" target="_blank" rel="noreferrer" class="cta is-external">Download résumé</a>
+          <a href="contact.html" class="quiet-link">Get in touch</a>
+        </div>
+      </section>
 
-      <main>
-        <section class="hero">
-          <div class="hero-text">
-            <p class="eyebrow">Portfolio</p>
-            <h1>Bridging Technology and Finance </h1>
-            <p class="subtitle">
-              Tech × Finance Dual Degree Student | Computing Science & Fintech
-            </p>
-            <div class="hero-actions">
-              <a href="projects.html" class="btn primary">See My Work</a>
-              <a href="contact.html#connect" class="btn secondary">Get in Touch</a>
-            </div>
-            <div class="hero-meta">
-              <div>
-                <div class="meta-label">Focus</div>
-                <div class="meta-value">Computing & Fintech Fundamentals</div>
-              </div>
-              <div>
-                <div class="meta-label">Location</div>
-                <div class="meta-value">Vancouver, Canada</div>
-              </div>
-              <div>
-                <div class="meta-label">Status</div>
-                <div class="meta-value">Open to Work</div>
-              </div>
-            </div>
+      <section class="block reveal" id="work">
+        <header class="block-head">
+          <div>
+            <p class="kicker"><span class="kicker-num">01</span> — Index</p>
+            <h2 class="block-title">Selected work</h2>
           </div>
-          <div class="hero-card">
-            <div class="portrait-placeholder">
-              <img src="./images/profile.png" alt="William Huang" class="portrait-image" width="72" height="72" />
-            </div>
-            <div class="hero-card-body">
-              <h2>William Huang</h2>
-              <p>Computing Science × Fintech student learning tech fundamentals for finance.</p>
-              <ul class="hero-highlights">
-                <li>SFU-ZJU Computing Science & Fintech Student</li>
-                <li>SFU 2029 Expected Graduation | ZJU 2030 Expected Graduation</li>
-                <li></li>
-              </ul>
-            </div>
-          </div>
-        </section>
+          <a href="projects.html" class="quiet-link">All projects</a>
+        </header>
 
-        <section class="section" id="about">
-          <div class="section-header">
-            <h2>About & Background</h2>
-            <a href="about.html" class="btn secondary">Discover more</a>
-          </div>
-          <div class="about-grid">
-            <div>
-              <h3>Background</h3>
-              <p>
-                Aspiring Computing Science and Fintech student. Outside of school, I am interested in graphic design, and 3D modelling. 
-              </p>
-              <p class="about-personal"></p>
-            </div>
-            <div>
-              <h3>How I work</h3>
-              <ul class="checklist">
-                <li>Team Player</li>
-                <li>Detail Oriented</li>
-                <li>Self Motivated</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section class="section" id="experience">
-          <div class="section-header">
-            <h2>Experience</h2>
-            <a href="experience.html" class="btn secondary">Discover more</a>
-          </div>
-          <div class="timeline">
-            <article class="timeline-item">
-              <div class="timeline-meta">
-                <div class="pill">Current</div>
-                <div class="timeline-dates">January 2026 — April 2026</div>
+        <ol class="work-list">
+          <li class="work-row">
+            <a class="work-link" href="case-study-respite.html">
+              <div class="work-thumb is-placeholder" aria-hidden="true">
+                <div class="placeholder-mark">
+                  <span class="pm-glyph">Respite</span>
+                  <span class="pm-tag">iOS · Swift</span>
+                </div>
               </div>
-              <div class="timeline-content">
-                <h3>StormForge 2026 Cohort · SFU Surge</h3>
-                <p class="location">Burnaby, British Columbia, Canada · Hybrid</p>
-                <ul>
-                  <li>Selected from a competitive pool of motivated SFU student applicants to collaborate in a team of four on a mentor-guided project, designed and completed within four months.</li>
+              <div class="work-meta">
+                <span class="work-num">01 · StormForge 2026 · SFU Surge cohort</span>
+                <h3 class="work-title">Respite</h3>
+                <p class="work-desc">
+                  A native iOS digital wellness app built in Swift with a
+                  team of four mentor-guided developers. Liquid Glass UI,
+                  with Screen Time, HealthKit, WeatherKit and Live
+                  Activities driving context-aware features.
+                </p>
+                <ul class="work-tags">
+                  <li>Swift</li>
+                  <li>Xcode</li>
+                  <li>HealthKit</li>
+                  <li>Liquid Glass</li>
                 </ul>
+                <span class="work-cta">View project</span>
               </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section" id="projects">
-          <div class="section-header">
-            <h2>Selected Projects</h2>
-            <a href="projects.html" class="btn secondary">Discover more</a>
-          </div>
-          <div class="projects-grid">
-            <article class="project-card">
-              <div class="project-visual" aria-hidden="true">
-                <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/235/442/datas/original.png" alt="Dashboard interface for Delta career-readiness tool" width="600" height="340" />
-              </div>
-              <h3>Delta</h3>
-              <p class="project-summary">Created for Software Systems Student Society, SystemHacks 2026, a 24 hour hackathon.</p>
-              <ul class="project-points">
-                <li>Calculated a readiness score for students and provided direct documentation links to help bridge the gap between academic learning and professional expectations.</li>
-                <li>Designed a system that guided users toward relevant resources, improving career preparedness and streamlining access to industry documentation.</li>
-              </ul>
-              <div class="project-meta">
-                <div class="project-tech">
-                  <span>SystemHacks 2026</span>
-                  <span>Hackathon</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://devpost.com/software/delta-lkmf4y" target="_blank" rel="noopener noreferrer">View on Devpost</a>
-                  <a href="case-study.html">Details</a>
-                </div>
-              </div>
-            </article>
-            <article class="project-card">
-              <div class="project-visual" aria-hidden="true">
-                <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/149/566/datas/original.png" alt="SFU SideQuests gamified campus companion app interface" width="600" height="340" />
-              </div>
-              <h3>SFU SideQuests</h3>
-              <p class="project-summary">A gamified campus companion for SFU students. Discover sidequests (social, academic, fitness, exploration) during time between classes.</p>
-              <ul class="project-points">
-                <li>Challenges ranging from social, academic, fitness and exploration for students to engage with their community.</li>
-                <li>Custom "Add Quest" feature to add your own quests.</li>
-              </ul>
-              <div class="project-meta">
-                <div class="project-tech">
-                  <span>JourneyHacks 2026</span>
-                  <span>Figma</span>
-                  <span>Git</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://devpost.com/software/sfu-sidequest" target="_blank" rel="noopener noreferrer">View on Devpost</a>
-                  <a href="case-study-sfu-sidequest.html">Details</a>
-                </div>
-              </div>
-            </article>
-            <article class="project-card">
-              <div class="project-visual" aria-hidden="true">
-                <img src="https://tr.rbxcdn.com/180DAY-cc9ba3e40453d1e78a9ceb5cd07f639b/500/280/Image/Jpeg/noFilter" alt="Kryptic Resorts & Hotel — Japanese-inspired resort lobby in Roblox" width="600" height="340" />
-              </div>
-              <h3>Kryptic Resorts & Hotel</h3>
-              <p class="project-summary">Created in Roblox Studio. A showcase / vibe game focused on delivering immersive and realistic environments, with product and monetization features.</p>
-              <ul class="project-points">
-                <li>Designed and built detailed maps using Roblox Studio and Blender with assets and furniture kits from the Roblox Marketplace.</li>
-                <li>Implemented gamepass systems for user monetization and programmed UI elements for NPC interactions.</li>
-              </ul>
-              <div class="project-meta">
-                <div class="project-tech">
-                  <span>Roblox Studio</span>
-                  <span>Lua</span>
-                  <span>Blender</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://www.roblox.com/games/93135168747892/Kryptic-Resorts-Hotel" target="_blank" rel="noopener noreferrer">Play on Roblox</a>
-                  <a href="case-study-kryptic-resorts.html">Details</a>
-                </div>
-              </div>
-            </article>
-            <article class="project-card">
-              <div class="project-visual" aria-hidden="true">
-                <img src="./images/kryptic-resorts-hotel.png" alt="Roblox Creator Portfolio showcasing multiple game projects" width="600" height="340" />
-              </div>
-              <h3>Roblox Creator Portfolio</h3>
-              <p class="project-summary">Showcase of Roblox game development work. Multiple projects built with Roblox Studio, Lua, and Blender.</p>
-              <ul class="project-points">
-                <li>Game development and level design in Roblox Studio.</li>
-                <li>Lua scripting, 3D modeling with Blender, and UI implementation.</li>
-              </ul>
-              <div class="project-meta">
-                <div class="project-tech">
-                  <span>Roblox Studio</span>
-                  <span>Lua</span>
-                  <span>Blender</span>
-                </div>
-                <div class="project-links">
-                  <a href="https://create.roblox.com/talent/creators/5365174861" target="_blank" rel="noopener noreferrer">View Creator Profile</a>
-                  <a href="case-study-roblox-creator.html">Details</a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section" id="skills">
-          <div class="section-header">
-            <h2>Skills & Focus</h2>
-            <a href="skills.html" class="btn secondary">Discover more</a>
-          </div>
-          <div class="skills-grid bento-grid">
-            <div class="skills-column">
-              <h3>Languages</h3>
-              <ul class="pill-list pill-list-stacked">
-                <li>Python</li>
-                <li>C++</li>
-                <li>Lua</li>
-              </ul>
-            </div>
-            <div class="skills-column">
-              <h3>Concepts</h3>
-              <ul class="pill-list pill-list-stacked">
-                <li>Data Structures & Algorithms</li>
-                <li>Object-Oriented Programming</li>
-                <li>Error Handling & Debugging</li>
-                <li>Basic Software Design</li>
-              </ul>
-            </div>
-            <div class="skills-column">
-              <h3>Tools</h3>
-              <ul class="pill-list pill-list-stacked">
-                <li>Blender</li>
-                <li>Roblox Studio</li>
-                <li>Canva</li>
-                <li>Figma</li>
-                <li>Bamboo Studio</li>  
-                <li>VS Code</li>
-                <li>Cursor</li>
-                <li>GitHub</li>
-                <li>Vercel</li>
-                <li>Microsoft Suite</li>
-                <li>Google Suite</li>
-              </ul>
-            </div>
-            <div class="skills-column">
-              <h3>Soft skills</h3>
-              <ul class="pill-list pill-list-stacked">
-                <li>Mandarin</li>
-                <li>Team Collaboration</li>
-                <li>Customer Communication</li>
-                <li>Time Management</li>
-                <li>Creative Thinking</li>
-                <li>Proactive</li>
-                <li>Self-Motivated</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section class="section" id="journey">
-          <div class="section-header">
-            <h2>Journey</h2>
-          </div>
-          <p class="section-desc"></p>
-          <div class="journey-timeline">
-            <div class="journey-item">
-              <div class="journey-dot" aria-hidden="true"></div>
-              <div class="journey-content">
-                <span class="journey-date">September 2025</span>
-                <h3>1st Year SFU Computing Science & Fintech Student</h3>
-                <p>Learned Python & C++</p>
-              </div>
-            </div>
-            <div class="journey-item">
-              <div class="journey-dot" aria-hidden="true"></div>
-              <div class="journey-content">
-                <span class="journey-date">January 2026</span>
-                <h3>SFU SideQuests | JourneyHacks 2026</h3>
-                <p>Created SFU SideQuests for SFU Surge, JourneyHacks 2026, a 12 hour hackathon.</p>
-              </div>
-            </div>
-            <div class="journey-item">
-              <div class="journey-dot" aria-hidden="true"></div>
-              <div class="journey-content">
-                <span class="journey-date">January 2026</span>
-                <h3>Accepted into StormForge 2026 | SFU Surge</h3>
-                <p>Selected from a competitive pool of motivated SFU student applicants to collaborate in a team of four on a mentor-guided project, designed and completed within four months.</p>
-              </div>
-            </div>
-            <div class="journey-item">
-              <div class="journey-dot" aria-hidden="true"></div>
-              <div class="journey-content">
-                <span class="journey-date">February 2026</span>
-                <h3>Delta | SystemHacks 2026</h3>
-                <p>Created Delta for Software Systems Student Society, SystemHacks 2026, a 24 hour hackathon.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="section" id="contact">
-          <div class="section-header">
-            <h2>Connect</h2>
-          </div>
-          <div class="contact-links">
-            <a href="https://www.linkedin.com/in/william-huang-569197310?utm_source=share_via&utm_content=profile&utm_medium=member_ios" class="contact-item" target="_blank" rel="noopener noreferrer">
-              <span class="contact-label">LinkedIn</span>
-              <span class="contact-value">Connect</span>
             </a>
-            <a href="https://github.com/WZH6489" class="contact-item" target="_blank" rel="noopener noreferrer">
-              <span class="contact-label">GitHub</span>
-              <span class="contact-value">Profile</span>
+          </li>
+
+          <li class="work-row">
+            <a class="work-link" href="case-study.html">
+              <div class="work-thumb">
+                <img
+                  src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/235/442/datas/original.png"
+                  alt="Delta — career-readiness dashboard"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="work-meta">
+                <span class="work-num">02 · SystemHacks 2026 · 24h Hackathon</span>
+                <h3 class="work-title">Delta</h3>
+                <p class="work-desc">
+                  A career-readiness dashboard that scores a student&rsquo;s
+                  preparedness against current industry demands and links
+                  directly to the documentation that closes the gap.
+                </p>
+                <ul class="work-tags">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+                <span class="work-cta">View project</span>
+              </div>
             </a>
-          </div>
-        </section>
+          </li>
 
-        <section id="connect" class="section section-connect">
-          <div class="section-header">
-            <h2>Get in Touch</h2>
-          </div>
-          <form id="connectForm" class="connect-form">
-            <div class="connect-row">
-              <div class="connect-field">
-                <label for="fromEmail">Your email</label>
-                <input id="fromEmail" name="fromEmail" type="email" required placeholder="your@email.com" />
+          <li class="work-row">
+            <a class="work-link" href="case-study-sfu-sidequest.html">
+              <div class="work-thumb">
+                <img
+                  src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/149/566/datas/original.png"
+                  alt="SFU SideQuests — gamified campus companion"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
-              <div class="connect-field">
-                <label for="subject">Subject</label>
-                <input id="subject" name="subject" type="text" required placeholder="What would you like to chat about?" />
+              <div class="work-meta">
+                <span class="work-num">03 · JourneyHacks 2026 · 12h Hackathon</span>
+                <h3 class="work-title">SFU SideQuests</h3>
+                <p class="work-desc">
+                  A gamified campus companion. Pickable side-quests across
+                  social, academic, fitness and exploration tracks —
+                  designed for the time between classes.
+                </p>
+                <ul class="work-tags">
+                  <li>Figma</li>
+                  <li>UI/UX</li>
+                  <li>Canva</li>
+                </ul>
+                <span class="work-cta">View project</span>
               </div>
-            </div>
-            <div class="connect-field">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="4" required placeholder="Share a few details about your project, role, or question."></textarea>
-            </div>
-            <button type="submit" class="btn primary connect-submit">Send message</button>
-            <p class="connect-form-note">Your message will open in your default email client.</p>
-          </form>
-        </section>
-      </main>
+            </a>
+          </li>
 
-      <footer class="site-footer">
-        <span>© <span id="currentYear"></span> William Huang. All rights reserved.</span>
-        <div class="footer-links">
-          <a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
-          <a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <li class="work-row">
+            <a class="work-link" href="case-study-postfix-calculator.html">
+              <div class="work-thumb is-placeholder" aria-hidden="true">
+                <div class="placeholder-mark">
+                  <span class="pm-glyph">3 4 + 2 *</span>
+                  <span class="pm-tag">C++ · Stack</span>
+                </div>
+              </div>
+              <div class="work-meta">
+                <span class="work-num">04 · Coursework · Nov 2025</span>
+                <h3 class="work-title">Postfix Calculator</h3>
+                <p class="work-desc">
+                  A C++ postfix expression evaluator backed by a stack —
+                  with first-class error handling and a small command set
+                  (clear, print, help, quit). 100% edge-case pass rate
+                  during testing.
+                </p>
+                <ul class="work-tags">
+                  <li>C++</li>
+                  <li>Stacks</li>
+                  <li>CLI</li>
+                </ul>
+                <span class="work-cta">View project</span>
+              </div>
+            </a>
+          </li>
+        </ol>
+      </section>
+
+      <section class="block reveal" id="experience">
+        <header class="block-head">
+          <div>
+            <p class="kicker"><span class="kicker-num">02</span> — Index</p>
+            <h2 class="block-title">Experience</h2>
+          </div>
+          <a href="experience.html" class="quiet-link">All experience</a>
+        </header>
+        <div class="exp-list">
+          <article class="exp-row">
+            <div class="exp-when">
+              <span class="exp-tag">Current</span>
+              <span class="exp-date">Jan&nbsp;—&nbsp;Apr 2026</span>
+            </div>
+            <div class="exp-what">
+              <h3>Software Developer Mentee · StormForge 2026, SFU&nbsp;Surge</h3>
+              <p class="exp-where">Burnaby, BC · Hybrid</p>
+              <p>
+                Collaborated with a team of four under industry mentors to
+                design and develop <strong>Respite</strong>, an iOS digital
+                wellness application built entirely in Swift. Engineered
+                core application logic and Liquid Glass UI components in
+                Xcode, integrating Screen Time, HealthKit, WeatherKit and
+                Live Activities for context-aware features.
+              </p>
+            </div>
+          </article>
+          <article class="exp-row">
+            <div class="exp-when">
+              <span class="exp-tag">Past</span>
+              <span class="exp-date">Sept 2023 — Jun 2025</span>
+            </div>
+            <div class="exp-what">
+              <h3>3D Designer &amp; Printer · Senior Robotics Team</h3>
+              <p class="exp-where">Vancouver, BC</p>
+              <p>
+                Designed and 3D-printed a custom mechanical arm and pan
+                mechanism, streamlining assembly and reducing hardware
+                failure points. Directed a team rebranding — new
+                merchandise and uniform logos — that contributed to a
+                <strong>$500+ increase in total funding</strong>.
+              </p>
+            </div>
+          </article>
         </div>
-      </footer>
-    </div>
+      </section>
 
-    <script src="./script.js?v=3"></script>
+      <section class="block reveal" id="about">
+        <header class="block-head">
+          <div>
+            <p class="kicker"><span class="kicker-num">03</span> — Index</p>
+            <h2 class="block-title">About</h2>
+          </div>
+          <a href="about.html" class="quiet-link">Read more</a>
+        </header>
+        <div class="block-grid two">
+          <p class="prose">
+            I&rsquo;m a Computing Science and Fintech student interested in
+            what happens when careful engineering meets considered design.
+            I care about quiet interfaces, durable code, and finishing what
+            I start. I work fastest when the problem is real and the team
+            is honest.
+          </p>
+          <ul class="hairline-list">
+            <li><span class="dot" aria-hidden="true"></span>Team player</li>
+            <li><span class="dot" aria-hidden="true"></span>Detail-oriented</li>
+            <li><span class="dot" aria-hidden="true"></span>Self-motivated</li>
+            <li><span class="dot" aria-hidden="true"></span>Bilingual · English &amp; Mandarin</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="block reveal" id="practice">
+        <header class="block-head">
+          <div>
+            <p class="kicker"><span class="kicker-num">04</span> — Index</p>
+            <h2 class="block-title">Practice</h2>
+          </div>
+          <a href="skills.html" class="quiet-link">Full inventory</a>
+        </header>
+        <div class="skills-cols">
+          <div class="skills-col">
+            <h4>Languages</h4>
+            <ul>
+              <li>Swift</li>
+              <li>C++</li>
+              <li>JavaScript</li>
+              <li>HTML &amp; CSS</li>
+              <li>Python</li>
+            </ul>
+          </div>
+          <div class="skills-col">
+            <h4>Concepts</h4>
+            <ul>
+              <li>Data structures &amp; algorithms</li>
+              <li>Object-oriented programming</li>
+              <li>iOS application development</li>
+              <li>Debugging &amp; error handling</li>
+            </ul>
+          </div>
+          <div class="skills-col">
+            <h4>Tools</h4>
+            <ul>
+              <li>Xcode</li>
+              <li>Figma</li>
+              <li>Git &amp; GitHub</li>
+              <li>Canva</li>
+              <li>Vercel</li>
+            </ul>
+          </div>
+          <div class="skills-col">
+            <h4>Practice</h4>
+            <ul>
+              <li>English · Mandarin</li>
+              <li>Team collaboration</li>
+              <li>Customer communication</li>
+              <li>Time management</li>
+              <li>Creative thinking</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="block reveal" id="connect">
+        <header class="block-head">
+          <div>
+            <p class="kicker"><span class="kicker-num">05</span> — Index</p>
+            <h2 class="block-title">Let&rsquo;s talk</h2>
+          </div>
+          <a href="contact.html" class="quiet-link">Contact page</a>
+        </header>
+        <div class="connect-grid">
+          <div class="connect-direct">
+            <p class="prose">
+              Open to internships, collaborations, and conversations. The
+              fastest way to reach me is the form to the right — I usually
+              reply within a day or two.
+            </p>
+            <ul class="quiet-links">
+              <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé (PDF)</a></li>
+            </ul>
+          </div>
+          <form id="connectForm" class="quiet-form" novalidate>
+            <label class="qf-field" for="fromEmail">
+              <span class="qf-label">Your email</span>
+              <input id="fromEmail" name="fromEmail" type="email" required placeholder="you@domain.com" autocomplete="email" />
+            </label>
+            <label class="qf-field" for="subject">
+              <span class="qf-label">Subject</span>
+              <input id="subject" name="subject" type="text" required placeholder="What is this about?" />
+            </label>
+            <label class="qf-field" for="message">
+              <span class="qf-label">Message</span>
+              <textarea id="message" name="message" rows="4" required placeholder="A few details about the project, role, or question."></textarea>
+            </label>
+            <button type="submit" class="cta is-primary">Send message</button>
+            <p class="qf-note">Opens in your default email client.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bottombar">
+      <div class="bottombar-inner">
+        <span>© <span id="currentYear"></span> William Huang · Vancouver</span>
+        <ul>
+          <li><a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="./script.js?v=10"></script>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>

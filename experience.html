@@ -3,75 +3,245 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Experience - Portfolio</title>
-    <meta
-      name="description"
-      content="Experience and work history."
-    />
+    <title>Experience — William Huang</title>
+    <meta name="description" content="William Huang's experience, cohorts, and education." />
+    <meta name="theme-color" content="#14110e" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css?v=3" />
+    <link rel="stylesheet" href="./style.css?v=10" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   </head>
   <body>
-    <div class="page">
-      <header class="site-header">
-        <div class="header-inner">
-          <a href="index.html" class="logo-and-name">
-            <div class="logo-circle"><img src="./images/profile.png" alt="William Huang" /></div>
-            <div>
-              <div class="name">William Huang</div>
-              <div class="role">First-year SFU-ZJU Computing Science & Fintech Student</div>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a href="index.html" class="mark" aria-label="William Huang — home">
+          <span class="mark-name">William Huang</span>
+          <span class="mark-role">SFU–ZJU · CS &amp; Fintech</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open menu"
+        >
+          <span></span>
+        </button>
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+          <a href="projects.html">Work</a>
+          <a href="experience.html" class="is-active">Experience</a>
+          <a href="about.html">About</a>
+          <a href="skills.html">Practice</a>
+          <a href="contact.html">Contact</a>
+          <a href="resume.pdf" target="_blank" rel="noreferrer" class="ghost-link">Résumé&nbsp;↗</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="shell">
+      <section class="hero reveal">
+        <p class="kicker"><span class="kicker-num">02</span> — Experience</p>
+        <h1 class="display">Where I&rsquo;ve shown up.</h1>
+        <p class="lede">
+          A short and growing list of cohorts, teams, and roles. I&rsquo;m
+          early in my career and trying to be honest about that — what
+          follows is real, not padded.
+        </p>
+      </section>
+
+      <section class="block reveal">
+        <header class="block-head">
+          <div>
+            <p class="kicker"><span class="kicker-num">01</span> — Education</p>
+            <h2 class="block-title">Education</h2>
+          </div>
+        </header>
+        <div class="exp-list">
+          <article class="exp-row">
+            <div class="exp-when">
+              <span class="exp-tag">Ongoing</span>
+              <span class="exp-date">Sept 2025 — Apr 2030 (Expected)</span>
             </div>
-          </a>
-          <nav class="nav">
-            <a href="about.html">About</a>
-            <a href="experience.html" class="nav-active">Experience</a>
-            <a href="projects.html">Projects</a>
-            <a href="skills.html">Skills</a>
-            <a href="contact.html#connect">Get in Touch</a>
-            <a href="resume.pdf" class="btn primary" target="_blank" rel="noreferrer">View Resume</a>
-          </nav>
+            <div class="exp-what">
+              <h3>Simon Fraser University &amp; Zhejiang University</h3>
+              <p class="exp-where">Burnaby, BC · Hangzhou, ZJ · Dual-degree program</p>
+              <p>
+                <strong>BSc Computing Science</strong> (SFU) &amp;
+                <strong>MFin Financial Technology</strong> (ZJU).
+                Coursework: Calculus I &amp; II, Introduction to Computing
+                Science I &amp; II, Discrete Mathematics I, Business
+                Statistics, Social Issues &amp; Communication Strategies in
+                Computing Science, Heritage Mandarin Chinese III &amp; IV.
+              </p>
+            </div>
+          </article>
         </div>
-      </header>
+      </section>
 
-      <main>
-        <section class="section">
-          <div class="section-header">
-            <h2>Experience</h2>
+      <section class="block reveal">
+        <header class="block-head">
+          <div>
+            <p class="kicker"><span class="kicker-num">02</span> — Experience</p>
+            <h2 class="block-title">Roles &amp; teams</h2>
           </div>
-          <div class="timeline">
-            <article class="timeline-item">
-              <div class="timeline-meta">
-                <div class="pill">Current</div>
-                <div class="timeline-dates">January 2026 — April 2026</div>
-              </div>
-              <div class="timeline-content">
-                <h3>StormForge 2026 Cohort · SFU Surge</h3>
-                <p class="location">Burnaby, British Columbia, Canada · Hybrid</p>
-                <ul>
-                  <li>Selected from a competitive pool of motivated SFU student applicants to collaborate in a team of four on a mentor-guided project, designed and completed within four months.</li>
-                </ul>
-              </div>
-            </article>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <span>© <span id="currentYear"></span> William Huang. All rights reserved.</span>
-        <div class="footer-links">
-          <a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
-          <a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </header>
+        <div class="exp-list">
+          <article class="exp-row">
+            <div class="exp-when">
+              <span class="exp-tag">Current</span>
+              <span class="exp-date">Jan&nbsp;—&nbsp;Apr 2026</span>
+            </div>
+            <div class="exp-what">
+              <h3>Software Developer Mentee · StormForge 2026, SFU&nbsp;Surge</h3>
+              <p class="exp-where">Burnaby, BC · Hybrid</p>
+              <p>
+                Collaborated with a team of four under industry mentors to
+                design and develop <strong>Respite</strong>, an iOS digital
+                wellness application built entirely in Swift. Engineered
+                core iOS application logic and immersive Liquid Glass UI
+                components in Xcode, integrating <strong>Screen Time</strong>,
+                <strong>HealthKit</strong>, <strong>WeatherKit</strong>, and
+                <strong>Live Activities</strong> for context-aware features.
+                <a class="inline-link" href="case-study-respite.html">Read the case study&nbsp;→</a>
+              </p>
+            </div>
+          </article>
+          <article class="exp-row">
+            <div class="exp-when">
+              <span class="exp-tag">Past</span>
+              <span class="exp-date">Sept 2023 — Jun 2025</span>
+            </div>
+            <div class="exp-what">
+              <h3>3D Designer &amp; Printer · Senior Robotics Team</h3>
+              <p class="exp-where">Vancouver, BC</p>
+              <p>
+                Designed and 3D-printed a custom mechanical arm and pan
+                mechanism that optimised structural integrity and agility,
+                streamlining assembly and significantly reducing hardware
+                failure points. Directed a comprehensive team rebranding —
+                conceptualising new merchandise and uniform logos — that
+                contributed to a <strong>$500+ increase in total funding</strong>.
+              </p>
+            </div>
+          </article>
+          <article class="exp-row">
+            <div class="exp-when">
+              <span class="exp-tag">Past</span>
+              <span class="exp-date">Mar 2022 — Jun 2025</span>
+            </div>
+            <div class="exp-what">
+              <h3>Part-Time Crew Member · McDonald&rsquo;s</h3>
+              <p class="exp-where">Vancouver, BC</p>
+              <p>
+                Coordinated with teams of 4&ndash;6 cross-functional crew
+                members during high-volume shifts, rapidly reorganising
+                struggling stations to serve <strong>100+ customers per hour</strong>
+                while minimising wait times. Onboarded and trained 3+ new
+                crew members in standardised food preparation and safety
+                procedures, fostering a versatile team capable of
+                independently operating both primary kitchen stations.
+              </p>
+            </div>
+          </article>
         </div>
-      </footer>
-    </div>
+      </section>
 
-    <script src="./script.js?v=3"></script>
+      <section class="block reveal">
+        <header class="block-head">
+          <div>
+            <p class="kicker"><span class="kicker-num">03</span> — Selected projects</p>
+            <h2 class="block-title">Hackathons &amp; coursework</h2>
+          </div>
+        </header>
+        <div class="exp-list">
+          <article class="exp-row">
+            <div class="exp-when">
+              <span class="exp-tag">Built</span>
+              <span class="exp-date">Feb 2026</span>
+            </div>
+            <div class="exp-what">
+              <h3>SystemHacks 2026 · Delta</h3>
+              <p class="exp-where">SFU · 24-hour hackathon</p>
+              <p>
+                Built Delta — a career-readiness dashboard that scores
+                student preparedness against current industry roles and
+                surfaces the documentation to close the gap.
+                <a class="inline-link" href="case-study.html">Read the case study&nbsp;→</a>
+              </p>
+            </div>
+          </article>
+          <article class="exp-row">
+            <div class="exp-when">
+              <span class="exp-tag">Built</span>
+              <span class="exp-date">Jan 2026</span>
+            </div>
+            <div class="exp-what">
+              <h3>JourneyHacks 2026 · SFU SideQuests</h3>
+              <p class="exp-where">SFU · 12-hour hackathon</p>
+              <p>
+                Prototyped SFU SideQuests — a gamified campus companion
+                designed in a single 12-hour build window, pitched to a
+                panel of industry experts.
+                <a class="inline-link" href="case-study-sfu-sidequest.html">Read the case study&nbsp;→</a>
+              </p>
+            </div>
+          </article>
+          <article class="exp-row">
+            <div class="exp-when">
+              <span class="exp-tag">Built</span>
+              <span class="exp-date">Nov 2025</span>
+            </div>
+            <div class="exp-what">
+              <h3>Postfix Calculator · C++ coursework</h3>
+              <p class="exp-where">SFU · Independent project</p>
+              <p>
+                A C++ postfix expression evaluator backed by a stack,
+                with first-class error handling and a small command set.
+                100% edge-case pass rate during testing.
+                <a class="inline-link" href="case-study-postfix-calculator.html">Read the case study&nbsp;→</a>
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="block reveal">
+        <header class="block-head">
+          <div>
+            <p class="kicker"><span class="kicker-num">04</span> — Next</p>
+            <h2 class="block-title">Looking forward</h2>
+          </div>
+        </header>
+        <p class="prose">
+          Currently open to hire — internships, contract, or collaborative
+          builds. Open to most stacks; I learn fast and ship carefully.
+        </p>
+        <div class="hero-actions">
+          <a href="projects.html" class="cta is-primary">See selected work</a>
+          <a href="resume.pdf" target="_blank" rel="noreferrer" class="cta is-external">Download résumé</a>
+          <a href="contact.html" class="quiet-link">Get in touch</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bottombar">
+      <div class="bottombar-inner">
+        <span>© <span id="currentYear"></span> William Huang · Vancouver</span>
+        <ul>
+          <li><a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="./script.js?v=10"></script>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>

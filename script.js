@@ -1,163 +1,159 @@
-// Custom cursor (desktop only)
-let cursorDot = document.getElementById("cursor-dot");
-let cursorRing = document.getElementById("cursor-ring");
-if (!cursorDot) {
-  cursorDot = document.createElement("div");
-  cursorDot.id = "cursor-dot";
-  cursorDot.className = "cursor-dot";
-  cursorDot.setAttribute("aria-hidden", "true");
-  document.body.prepend(cursorDot);
-}
-if (!cursorRing) {
-  cursorRing = document.createElement("div");
-  cursorRing.id = "cursor-ring";
-  cursorRing.className = "cursor-ring";
-  cursorRing.setAttribute("aria-hidden", "true");
-  document.body.prepend(cursorRing);
-}
+/* William Huang — Portfolio
+   Small, dependency-free, fast.
+   ------------------------------------------------------------ */
 
-const hoverTargets = "a, button, .project-card, .contact-item, .btn";
+(function () {
+  "use strict";
 
-if (cursorDot && cursorRing && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-  document.body.classList.add("custom-cursor");
-  let mouseX = 0, mouseY = 0;
-  let dotX = 0, dotY = 0, ringX = 0, ringY = 0;
+  const reduced =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
+  /* ------------------------------------------------------------
+     Footer year
+  ------------------------------------------------------------ */
+  const yearEl = document.getElementById("currentYear");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  const isHover = (el) => el && (el.matches(hoverTargets) || el.closest(hoverTargets));
-
-  document.addEventListener("mouseover", (e) => {
-    if (isHover(e.target)) cursorRing.classList.add("hover");
-  });
-  document.addEventListener("mouseout", (e) => {
-    if (!isHover(e.relatedTarget)) cursorRing.classList.remove("hover");
-  });
-
-  function animate() {
-    dotX += (mouseX - dotX) * 0.95;
-    dotY += (mouseY - dotY) * 0.95;
-    ringX += (mouseX - ringX) * 0.85;
-    ringY += (mouseY - ringY) * 0.85;
-    const ringScale = cursorRing.classList.contains("hover") ? 1 : 0.5;
-    cursorDot.style.transform = `translate(${dotX}px, ${dotY}px)`;
-    cursorRing.style.transform = `translate(${ringX}px, ${ringY}px) scale(${ringScale})`;
-    requestAnimationFrame(animate);
+  /* ------------------------------------------------------------
+     Reveal on scroll
+  ------------------------------------------------------------ */
+  const revealTargets = document.querySelectorAll(".reveal");
+  if (revealTargets.length) {
+    if (!reduced && "IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              io.unobserve(entry.target);
+            }
+          }
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -60px 0px" }
+      );
+      revealTargets.forEach((el) => io.observe(el));
+    } else {
+      revealTargets.forEach((el) => el.classList.add("is-visible"));
+    }
   }
-  animate();
-}
 
-// Current year
-const currentYearEl = document.getElementById("currentYear");
-if (currentYearEl) {
-  currentYearEl.textContent = new Date().getFullYear();
-}
-
-// Fade-in sections on scroll
-const sections = document.querySelectorAll(".section, .hero");
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add("is-visible");
+  /* ------------------------------------------------------------
+     Mobile nav toggle
+  ------------------------------------------------------------ */
+  const toggle = document.querySelector(".nav-toggle");
+  const primaryNav = document.querySelector(".primary-nav");
+  if (toggle && primaryNav) {
+    const close = () => {
+      toggle.setAttribute("aria-expanded", "false");
+      primaryNav.classList.remove("is-open");
+    };
+    const open = () => {
+      toggle.setAttribute("aria-expanded", "true");
+      primaryNav.classList.add("is-open");
+    };
+    toggle.addEventListener("click", () => {
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+      if (isOpen) close();
+      else open();
     });
-  },
-  { threshold: 0.06, rootMargin: "0px 0px -30px 0px" }
-);
-sections.forEach((el) => sectionObserver.observe(el));
-
-// Fade-up project cards with stagger (when they enter viewport)
-const projectCards = document.querySelectorAll(".project-card");
-const cardObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add("is-visible");
+    primaryNav.addEventListener("click", (e) => {
+      const t = e.target;
+      if (t && t.tagName === "A") close();
     });
-  },
-  { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
-);
-projectCards.forEach((card) => cardObserver.observe(card));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") close();
+    });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 760) close();
+    });
+  }
 
-// Copy email button
-const copyEmailBtn = document.getElementById("copyEmailBtn");
-const contactEmailDisplay = document.getElementById("contactEmailDisplay");
-if (copyEmailBtn && contactEmailDisplay) {
-  copyEmailBtn.addEventListener("click", async () => {
-    const email = copyEmailBtn.getAttribute("data-email") || "";
-    if (!email || email === "you@example.com") {
-      contactEmailDisplay.textContent = "Set data-email on the button";
-      return;
-    }
-    try {
-      await navigator.clipboard.writeText(email);
-      contactEmailDisplay.textContent = "Copied!";
-      setTimeout(() => {
-        contactEmailDisplay.textContent = "Click to copy";
-      }, 2000);
-    } catch {
-      contactEmailDisplay.textContent = "Copy failed";
-    }
+  /* ------------------------------------------------------------
+     Smooth scroll for in-page anchors
+  ------------------------------------------------------------ */
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      const href = anchor.getAttribute("href");
+      if (!href || href === "#") return;
+      const target = document.getElementById(href.slice(1));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: reduced ? "auto" : "smooth",
+        block: "start",
+      });
+      history.replaceState(null, "", href);
+    });
   });
-}
 
-// Project cards: clicking the card (not a link) goes to details/case study page
-document.querySelectorAll(".project-card").forEach((card) => {
-  card.style.cursor = "pointer";
-  card.addEventListener("click", (e) => {
-    if (e.target.closest("a")) return;
-    const detailsLink = card.querySelector('a[href*="case-study"]');
-    const url = detailsLink ? detailsLink.getAttribute("href") : "case-study.html";
-    if (url) window.location.href = url;
-  });
-});
+  /* ------------------------------------------------------------
+     Contact form → mailto
+  ------------------------------------------------------------ */
+  const connectForm = document.getElementById("connectForm");
+  if (connectForm) {
+    connectForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fromEmail = (document.getElementById("fromEmail") || {}).value || "";
+      const subject = (document.getElementById("subject") || {}).value || "";
+      const message = (document.getElementById("message") || {}).value || "";
+      if (!fromEmail.trim() || !subject.trim() || !message.trim()) return;
 
-// Smooth scroll for nav links and anchor links
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", (e) => {
-    const targetId = anchor.getAttribute("href").slice(1);
-    const target = document.getElementById(targetId);
-    if (!target) return;
-    e.preventDefault();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-  });
-});
+      const to = "wihuang5190@outlook.com";
+      const body = `From: ${fromEmail}\n\n${message}`;
+      const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+      connectForm.reset();
+    });
+  }
 
-// When landing on contact.html#connect, scroll connect section to top of viewport
-if (window.location.hash === "#connect") {
-  const scrollConnectToTop = () => {
-    const el = document.getElementById("connect");
-    if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top, left: 0, behavior: "instant" });
+  /* ------------------------------------------------------------
+     Back-to-top button — passive scroll, rAF-throttled
+  ------------------------------------------------------------ */
+  const btt = document.createElement("button");
+  btt.type = "button";
+  btt.className = "back-to-top";
+  btt.setAttribute("aria-label", "Back to top");
+  btt.innerHTML =
+    '<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+    '<path d="M7 12V2"/><path d="M2.5 6.5L7 2l4.5 4.5"/>' +
+    "</svg>";
+  document.body.appendChild(btt);
+
+  const SHOW_AFTER = 480;
+  let ticking = false;
+  let shown = false;
+  const tick = () => {
+    const next = window.scrollY > SHOW_AFTER;
+    if (next !== shown) {
+      shown = next;
+      btt.classList.toggle("is-shown", shown);
     }
+    ticking = false;
   };
-  scrollConnectToTop();
-  requestAnimationFrame(scrollConnectToTop);
-  window.addEventListener("load", scrollConnectToTop);
-}
+  tick();
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        window.requestAnimationFrame(tick);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
 
-// "Let's connect" form -> open mail client
-const connectForm = document.getElementById("connectForm");
-if (connectForm) {
-  connectForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const fromEmail = document.getElementById("fromEmail").value.trim();
-    const subject = document.getElementById("subject").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    if (!fromEmail || !subject || !message) return;
-
-    const to = "williamhuang129@yahoo.com";
-    const bodyLines = [`From: ${fromEmail}`, "", message];
-    const mailto = `mailto:${encodeURIComponent(to)}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
-
-    window.location.href = mailto;
-    connectForm.reset();
+  btt.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: reduced ? "auto" : "smooth",
+    });
+    if (history.replaceState) {
+      const cleanUrl = window.location.pathname + window.location.search;
+      history.replaceState(null, "", cleanUrl);
+    }
   });
-}
-
-
+})();

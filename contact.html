@@ -3,119 +3,109 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - Portfolio</title>
-    <meta
-      name="description"
-      content="Ways to reach out and connect."
-    />
+    <title>Contact — William Huang</title>
+    <meta name="description" content="Get in touch with William Huang." />
+    <meta name="theme-color" content="#14110e" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css?v=3" />
+    <link rel="stylesheet" href="./style.css?v=10" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   </head>
   <body>
-    <div class="page">
-      <header class="site-header">
-        <div class="header-inner">
-          <a href="index.html" class="logo-and-name">
-            <div class="logo-circle"><img src="./images/profile.png" alt="William Huang" /></div>
-            <div>
-              <div class="name">William Huang</div>
-              <div class="role">First-year SFU-ZJU Computing Science & Fintech Student</div>
-            </div>
-          </a>
-          <nav class="nav">
-            <a href="about.html">About</a>
-            <a href="experience.html">Experience</a>
-            <a href="projects.html">Projects</a>
-            <a href="skills.html">Skills</a>
-            <a href="contact.html#connect" class="nav-active">Get in Touch</a>
-            <a href="resume.pdf" class="btn primary" target="_blank" rel="noreferrer">View Resume</a>
-          </nav>
+    <a href="#main" class="skip-link">Skip to content</a>
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a href="index.html" class="mark" aria-label="William Huang — home">
+          <span class="mark-name">William Huang</span>
+          <span class="mark-role">SFU–ZJU · CS &amp; Fintech</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+          aria-label="Open menu"
+        >
+          <span></span>
+        </button>
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+          <a href="projects.html">Work</a>
+          <a href="experience.html">Experience</a>
+          <a href="about.html">About</a>
+          <a href="skills.html">Practice</a>
+          <a href="contact.html" class="is-active">Contact</a>
+          <a href="resume.pdf" target="_blank" rel="noreferrer" class="ghost-link">Résumé&nbsp;↗</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="shell">
+      <section class="hero reveal" id="connect">
+        <div class="status-pill">
+          <span class="status-dot" aria-hidden="true"></span>
+          Open to hire
         </div>
-      </header>
+        <p class="kicker"><span class="kicker-num">05</span> — Contact</p>
+        <h1 class="display">Let&rsquo;s talk.</h1>
+        <p class="lede">
+          Open to internships, collaborations, and conversations. The
+          fastest way to reach me is the form below — or find me on the
+          platforms to the left.
+        </p>
+      </section>
 
-      <main>
-        <section class="section">
-          <div class="section-header">
-            <h2>Contact</h2>
+      <section class="block reveal">
+        <div class="connect-grid">
+          <div class="connect-direct">
+            <p class="kicker"><span class="kicker-num">01</span> — Direct</p>
+            <p class="prose">
+              The form sends straight to my inbox. I usually reply within a
+              day or two — sometimes faster. You can also find me on the
+              platforms below.
+            </p>
+            <ul class="quiet-links">
+              <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé (PDF)</a></li>
+            </ul>
           </div>
-          <div class="contact-grid">
-            <div>
-              <p>
-                Feel free to reach out via the form below or connect with me on LinkedIn and GitHub.
-              </p>
-            </div>
-            <div class="contact-links">
-              <a href="https://www.linkedin.com/in/william-huang-569197310?utm_source=share_via&utm_content=profile&utm_medium=member_ios" class="contact-item" target="_blank" rel="noreferrer">
-                <span class="contact-label">LinkedIn</span>
-                <span class="contact-value">linkedin.com/in/william-huang-569197310</span>
-              </a>
-              <a href="https://github.com/WZH6489" class="contact-item" target="_blank" rel="noreferrer">
-                <span class="contact-label">GitHub</span>
-                <span class="contact-value">github.com/WZH6489</span>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        <section id="connect" class="section section-connect">
-          <div class="section-header">
-            <h2>Let's connect</h2>
-          </div>
-          <form id="connectForm" class="connect-form">
-            <div class="connect-row">
-              <div class="connect-field">
-                <label for="fromEmail">Your email</label>
-                <input
-                  id="fromEmail"
-                  name="fromEmail"
-                  type="email"
-                  required
-                  placeholder="your@email.com"
-                />
-              </div>
-              <div class="connect-field">
-                <label for="subject">Subject</label>
-                <input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  required
-                  placeholder="What would you like to chat about?"
-                />
-              </div>
-            </div>
-            <div class="connect-field">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="4"
-                required
-                placeholder="Share a few details about your project, role, or question."
-              ></textarea>
-            </div>
-            <button type="submit" class="btn primary connect-submit">Send message</button>
-            <p class="connect-form-note">Your message will open in your default email client.</p>
+          <form id="connectForm" class="quiet-form" novalidate>
+            <label class="qf-field" for="fromEmail">
+              <span class="qf-label">Your email</span>
+              <input id="fromEmail" name="fromEmail" type="email" required placeholder="you@domain.com" autocomplete="email" />
+            </label>
+            <label class="qf-field" for="subject">
+              <span class="qf-label">Subject</span>
+              <input id="subject" name="subject" type="text" required placeholder="What is this about?" />
+            </label>
+            <label class="qf-field" for="message">
+              <span class="qf-label">Message</span>
+              <textarea id="message" name="message" rows="5" required placeholder="A few details about the project, role, or question."></textarea>
+            </label>
+            <button type="submit" class="cta is-primary">Send message</button>
+            <p class="qf-note">Opens in your default email client.</p>
           </form>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <span>© <span id="currentYear"></span> William Huang. All rights reserved.</span>
-        <div class="footer-links">
-          <a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
-          <a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
-      </footer>
-    </div>
+      </section>
+    </main>
 
-    <script src="./script.js?v=3"></script>
+    <footer class="bottombar">
+      <div class="bottombar-inner">
+        <span>© <span id="currentYear"></span> William Huang · Vancouver</span>
+        <ul>
+          <li><a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="./script.js?v=10"></script>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
