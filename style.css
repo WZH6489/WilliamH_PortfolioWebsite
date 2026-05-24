@@ -46,7 +46,7 @@
 *::after { box-sizing: border-box; }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   scrollbar-gutter: stable;
 }
 
@@ -89,6 +89,13 @@ body::before {
 }
 
 img { max-width: 100%; height: auto; display: block; }
+
+.prose code,
+.work-desc code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  color: var(--ink);
+}
 
 /* =========================================================
    Skip link (a11y)
@@ -871,7 +878,7 @@ a.inline-link:hover {
 
 .skills-cols {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(20px, 3vw, 40px);
 }
 
@@ -903,7 +910,7 @@ a.inline-link:hover {
 }
 
 @media (max-width: 900px) {
-  .skills-cols { grid-template-columns: repeat(2, 1fr); }
+  .skills-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 480px) {
   .skills-cols { grid-template-columns: 1fr; }
@@ -1060,24 +1067,15 @@ a.inline-link:hover {
   border-bottom-color: var(--accent-line);
 }
 
-/* =========================================================
-   Reveal on scroll — opacity only (no transform, no jank).
-   ========================================================= */
+/* Sections render immediately — no scroll-triggered fades. */
+.reveal { opacity: 1; }
 
-.reveal {
-  opacity: 0;
-  transition: opacity 0.55s ease;
-}
-
-.reveal.is-visible { opacity: 1; }
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .reveal.is-visible {
-    opacity: 1;
-    transition: none;
-  }
-  html { scroll-behavior: auto; }
+/* Direct contact actions (replaces fake mailto form). */
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 20px;
 }
 
 /* =========================================================

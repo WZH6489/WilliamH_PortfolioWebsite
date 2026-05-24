@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css?v=10" />
+    <link rel="stylesheet" href="./style.css?v=11" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   </head>
   <body>
@@ -40,7 +40,7 @@
           <a href="projects.html">Work</a>
           <a href="experience.html">Experience</a>
           <a href="about.html">About</a>
-          <a href="skills.html">Practice</a>
+          <a href="skills.html">Skills</a>
           <a href="contact.html">Contact</a>
           <a href="resume.pdf" target="_blank" rel="noreferrer" class="ghost-link">Résumé&nbsp;↗</a>
         </nav>
@@ -48,12 +48,11 @@
     </header>
 
     <main id="main" class="shell">
-      <section class="hero reveal">
+      <section class="hero" id="top">
         <div class="status-pill">
           <span class="status-dot" aria-hidden="true"></span>
           Open to hire
         </div>
-        <p class="kicker"><span class="kicker-num">00</span> — Portfolio · 2026</p>
         <h1 class="display">
           What I&rsquo;ve been working on.
         </h1>
@@ -75,10 +74,9 @@
         </div>
       </section>
 
-      <section class="block reveal" id="work">
+      <section class="block" id="work">
         <header class="block-head">
           <div>
-            <p class="kicker"><span class="kicker-num">01</span> — Index</p>
             <h2 class="block-title">Selected work</h2>
           </div>
           <a href="projects.html" class="quiet-link">All projects</a>
@@ -97,10 +95,10 @@
                 <span class="work-num">01 · StormForge 2026 · SFU Surge cohort</span>
                 <h3 class="work-title">Respite</h3>
                 <p class="work-desc">
-                  A native iOS digital wellness app built in Swift with a
-                  team of four mentor-guided developers. Liquid Glass UI,
-                  with Screen Time, HealthKit, WeatherKit and Live
-                  Activities driving context-aware features.
+                  iOS app in Swift (StormForge / SFU Surge). I worked on
+                  the SwiftUI views and HealthKit + Live Activities
+                  integration — Screen Time and WeatherKit fed the
+                  suggestion logic.
                 </p>
                 <ul class="work-tags">
                   <li>Swift</li>
@@ -127,9 +125,10 @@
                 <span class="work-num">02 · SystemHacks 2026 · 24h Hackathon</span>
                 <h3 class="work-title">Delta</h3>
                 <p class="work-desc">
-                  A career-readiness dashboard that scores a student&rsquo;s
-                  preparedness against current industry demands and links
-                  directly to the documentation that closes the gap.
+                  Vanilla JS dashboard — I wrote the scoring engine that
+                  fuzzy-matches industry skill names against SFU course
+                  JSON and returns a readiness score plus doc links.
+                  No framework, shipped in 24&nbsp;hours.
                 </p>
                 <ul class="work-tags">
                   <li>HTML</li>
@@ -155,9 +154,10 @@
                 <span class="work-num">03 · JourneyHacks 2026 · 12h Hackathon</span>
                 <h3 class="work-title">SFU SideQuests</h3>
                 <p class="work-desc">
-                  A gamified campus companion. Pickable side-quests across
-                  social, academic, fitness and exploration tracks —
-                  designed for the time between classes.
+                  Figma prototype for a campus quest app. I built the
+                  clickable flows (quest picker, add-a-quest, profile)
+                  and pitched it to the judges — 12-hour hackathon,
+                  team of three.
                 </p>
                 <ul class="work-tags">
                   <li>Figma</li>
@@ -168,40 +168,12 @@
               </div>
             </a>
           </li>
-
-          <li class="work-row">
-            <a class="work-link" href="case-study-postfix-calculator.html">
-              <div class="work-thumb is-placeholder" aria-hidden="true">
-                <div class="placeholder-mark">
-                  <span class="pm-glyph">3 4 + 2 *</span>
-                  <span class="pm-tag">C++ · Stack</span>
-                </div>
-              </div>
-              <div class="work-meta">
-                <span class="work-num">04 · Coursework · Nov 2025</span>
-                <h3 class="work-title">Postfix Calculator</h3>
-                <p class="work-desc">
-                  A C++ postfix expression evaluator backed by a stack —
-                  with first-class error handling and a small command set
-                  (clear, print, help, quit). 100% edge-case pass rate
-                  during testing.
-                </p>
-                <ul class="work-tags">
-                  <li>C++</li>
-                  <li>Stacks</li>
-                  <li>CLI</li>
-                </ul>
-                <span class="work-cta">View project</span>
-              </div>
-            </a>
-          </li>
         </ol>
       </section>
 
-      <section class="block reveal" id="experience">
+      <section class="block" id="experience">
         <header class="block-head">
           <div>
-            <p class="kicker"><span class="kicker-num">02</span> — Index</p>
             <h2 class="block-title">Experience</h2>
           </div>
           <a href="experience.html" class="quiet-link">All experience</a>
@@ -209,7 +181,7 @@
         <div class="exp-list">
           <article class="exp-row">
             <div class="exp-when">
-              <span class="exp-tag">Current</span>
+              <span class="exp-tag">Past</span>
               <span class="exp-date">Jan&nbsp;—&nbsp;Apr 2026</span>
             </div>
             <div class="exp-what">
@@ -218,10 +190,10 @@
               <p>
                 Collaborated with a team of four under industry mentors to
                 design and develop <strong>Respite</strong>, an iOS digital
-                wellness application built entirely in Swift. Engineered
-                core application logic and Liquid Glass UI components in
-                Xcode, integrating Screen Time, HealthKit, WeatherKit and
-                Live Activities for context-aware features.
+                wellness application built entirely in Swift. Built core
+                application logic and Liquid Glass UI components in Xcode,
+                integrating Screen Time, HealthKit, WeatherKit and Live
+                Activities for context-aware features.
               </p>
             </div>
           </article>
@@ -245,38 +217,33 @@
         </div>
       </section>
 
-      <section class="block reveal" id="about">
+      <section class="block" id="about">
         <header class="block-head">
           <div>
-            <p class="kicker"><span class="kicker-num">03</span> — Index</p>
             <h2 class="block-title">About</h2>
           </div>
           <a href="about.html" class="quiet-link">Read more</a>
         </header>
         <div class="block-grid two">
           <p class="prose">
-            I&rsquo;m a Computing Science and Fintech student interested in
-            what happens when careful engineering meets considered design.
-            I care about quiet interfaces, durable code, and finishing what
-            I start. I work fastest when the problem is real and the team
-            is honest.
+            First-year CS and fintech student at SFU–ZJU. I pick up new
+            stacks through projects — most recently Swift and iOS in
+            SFU Surge&rsquo;s StormForge cohort, plus whatever a hackathon
+            throws at me.
           </p>
           <ul class="hairline-list">
-            <li><span class="dot" aria-hidden="true"></span>Team player</li>
-            <li><span class="dot" aria-hidden="true"></span>Detail-oriented</li>
-            <li><span class="dot" aria-hidden="true"></span>Self-motivated</li>
-            <li><span class="dot" aria-hidden="true"></span>Bilingual · English &amp; Mandarin</li>
+            <li><span class="dot" aria-hidden="true"></span>Vancouver, BC</li>
+            <li><span class="dot" aria-hidden="true"></span>English &amp; Mandarin</li>
           </ul>
         </div>
       </section>
 
-      <section class="block reveal" id="practice">
+      <section class="block" id="skills">
         <header class="block-head">
           <div>
-            <p class="kicker"><span class="kicker-num">04</span> — Index</p>
-            <h2 class="block-title">Practice</h2>
+            <h2 class="block-title">Skills</h2>
           </div>
-          <a href="skills.html" class="quiet-link">Full inventory</a>
+          <a href="skills.html" class="quiet-link">Full list</a>
         </header>
         <div class="skills-cols">
           <div class="skills-col">
@@ -308,33 +275,22 @@
               <li>Vercel</li>
             </ul>
           </div>
-          <div class="skills-col">
-            <h4>Practice</h4>
-            <ul>
-              <li>English · Mandarin</li>
-              <li>Team collaboration</li>
-              <li>Customer communication</li>
-              <li>Time management</li>
-              <li>Creative thinking</li>
-            </ul>
-          </div>
         </div>
       </section>
 
-      <section class="block reveal" id="connect">
+      <section class="block" id="connect">
         <header class="block-head">
           <div>
-            <p class="kicker"><span class="kicker-num">05</span> — Index</p>
-            <h2 class="block-title">Let&rsquo;s talk</h2>
+            <h2 class="block-title">Contact</h2>
           </div>
           <a href="contact.html" class="quiet-link">Contact page</a>
         </header>
         <div class="connect-grid">
           <div class="connect-direct">
             <p class="prose">
-              Open to internships, collaborations, and conversations. The
-              fastest way to reach me is the form to the right — I usually
-              reply within a day or two.
+              Open to internships and summer roles. Fastest way to reach
+              me is email or LinkedIn — I usually reply within a day or
+              two.
             </p>
             <ul class="quiet-links">
               <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
@@ -342,22 +298,10 @@
               <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé (PDF)</a></li>
             </ul>
           </div>
-          <form id="connectForm" class="quiet-form" novalidate>
-            <label class="qf-field" for="fromEmail">
-              <span class="qf-label">Your email</span>
-              <input id="fromEmail" name="fromEmail" type="email" required placeholder="you@domain.com" autocomplete="email" />
-            </label>
-            <label class="qf-field" for="subject">
-              <span class="qf-label">Subject</span>
-              <input id="subject" name="subject" type="text" required placeholder="What is this about?" />
-            </label>
-            <label class="qf-field" for="message">
-              <span class="qf-label">Message</span>
-              <textarea id="message" name="message" rows="4" required placeholder="A few details about the project, role, or question."></textarea>
-            </label>
-            <button type="submit" class="cta is-primary">Send message</button>
-            <p class="qf-note">Opens in your default email client.</p>
-          </form>
+          <div class="contact-actions">
+            <a href="mailto:wihuang5190@outlook.com" class="cta is-primary">Email me</a>
+            <a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer" class="cta is-external">Message on LinkedIn</a>
+          </div>
         </div>
       </section>
     </main>
@@ -373,7 +317,7 @@
       </div>
     </footer>
 
-    <script src="./script.js?v=10"></script>
+    <script src="./script.js?v=11"></script>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>

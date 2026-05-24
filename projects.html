@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Selected work — William Huang</title>
-    <meta name="description" content="Selected projects by William Huang — iOS, web, and systems work." />
+    <meta name="description" content="Selected projects by William Huang — iOS, web, and coursework." />
     <meta name="theme-color" content="#14110e" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css?v=10" />
+    <link rel="stylesheet" href="./style.css?v=11" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   </head>
   <body>
@@ -37,7 +37,7 @@
           <a href="projects.html" class="is-active">Work</a>
           <a href="experience.html">Experience</a>
           <a href="about.html">About</a>
-          <a href="skills.html">Practice</a>
+          <a href="skills.html">Skills</a>
           <a href="contact.html">Contact</a>
           <a href="resume.pdf" target="_blank" rel="noreferrer" class="ghost-link">Résumé&nbsp;↗</a>
         </nav>
@@ -45,18 +45,15 @@
     </header>
 
     <main id="main" class="shell">
-      <section class="hero reveal">
-        <p class="kicker"><span class="kicker-num">01</span> — Selected work</p>
-        <h1 class="display">A handful of finished things.</h1>
+      <section class="hero">
+        <h1 class="display">Work</h1>
         <p class="lede">
-          A small, deliberate set — from a four-month iOS cohort build to
-          hackathon products shipped in a day. Each entry links to a
-          deeper page with goals, decisions, and what I&rsquo;d do next
-          time.
+          Hackathon builds and a cohort iOS app. Each link goes to a page
+          with more detail on what I actually did.
         </p>
       </section>
 
-      <section class="block reveal">
+      <section class="block">
         <ol class="work-list">
           <li class="work-row">
             <a class="work-link" href="case-study-respite.html">
@@ -67,16 +64,15 @@
                 </div>
               </div>
               <div class="work-meta">
-                <span class="work-num">01 · StormForge 2026 · SFU Surge cohort</span>
+                <span class="work-num">StormForge 2026 · SFU Surge</span>
                 <h3 class="work-title">Respite</h3>
                 <p class="work-desc">
-                  A native iOS digital wellness app built in Swift with a
-                  team of four mentor-guided developers. Liquid Glass UI,
-                  with Screen Time, HealthKit, WeatherKit and Live
-                  Activities driving context-aware features.
+                  iOS app in Swift. I worked on the SwiftUI views and
+                  HealthKit + Live Activities integration — Screen Time
+                  and WeatherKit fed the suggestion logic.
                 </p>
                 <ul class="work-tags">
-                  <li>Swift</li><li>Xcode</li><li>HealthKit</li><li>Liquid Glass</li>
+                  <li>Swift</li><li>Xcode</li><li>HealthKit</li>
                 </ul>
                 <span class="work-cta">View project</span>
               </div>
@@ -88,12 +84,12 @@
                 <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/235/442/datas/original.png" alt="Delta — career-readiness dashboard" loading="lazy" decoding="async" />
               </div>
               <div class="work-meta">
-                <span class="work-num">02 · SystemHacks 2026 · 24h Hackathon</span>
+                <span class="work-num">SystemHacks 2026 · 24h</span>
                 <h3 class="work-title">Delta</h3>
                 <p class="work-desc">
-                  A career-readiness dashboard that scores a student&rsquo;s
-                  preparedness against current industry demands and links
-                  directly to the documentation that closes the gap.
+                  Vanilla JS dashboard — I wrote the scoring engine that
+                  fuzzy-matches industry skill names against SFU course
+                  JSON and returns a readiness score plus doc links.
                 </p>
                 <ul class="work-tags">
                   <li>HTML</li><li>CSS</li><li>JavaScript</li>
@@ -108,12 +104,12 @@
                 <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/149/566/datas/original.png" alt="SFU SideQuests — gamified campus companion" loading="lazy" decoding="async" />
               </div>
               <div class="work-meta">
-                <span class="work-num">03 · JourneyHacks 2026 · 12h Hackathon</span>
+                <span class="work-num">JourneyHacks 2026 · 12h</span>
                 <h3 class="work-title">SFU SideQuests</h3>
                 <p class="work-desc">
-                  A gamified campus companion. Pickable side-quests across
-                  social, academic, fitness and exploration tracks —
-                  designed for the time between classes.
+                  Figma prototype — I built the clickable flows (quest
+                  picker, add-a-quest, profile) and pitched to the judges.
+                  Team of three.
                 </p>
                 <ul class="work-tags">
                   <li>Figma</li><li>UI/UX</li><li>Canva</li>
@@ -122,45 +118,14 @@
               </div>
             </a>
           </li>
-          <li class="work-row">
-            <a class="work-link" href="case-study-postfix-calculator.html">
-              <div class="work-thumb is-placeholder" aria-hidden="true">
-                <div class="placeholder-mark">
-                  <span class="pm-glyph">3 4 + 2 *</span>
-                  <span class="pm-tag">C++ · Stack</span>
-                </div>
-              </div>
-              <div class="work-meta">
-                <span class="work-num">04 · Coursework · Nov 2025</span>
-                <h3 class="work-title">Postfix Calculator</h3>
-                <p class="work-desc">
-                  A C++ postfix expression evaluator backed by a stack —
-                  with first-class error handling and a small command set
-                  (clear, print, help, quit). 100% edge-case pass rate
-                  during testing.
-                </p>
-                <ul class="work-tags">
-                  <li>C++</li><li>Stacks</li><li>CLI</li>
-                </ul>
-                <span class="work-cta">View project</span>
-              </div>
-            </a>
-          </li>
         </ol>
       </section>
 
-      <section class="block reveal">
-        <header class="block-head">
-          <div>
-            <p class="kicker"><span class="kicker-num">02</span> — Also</p>
-            <h2 class="block-title">This site.</h2>
-          </div>
-        </header>
+      <section class="block">
+        <h2 class="block-title">This site</h2>
         <p class="prose">
-          <strong>Personal portfolio website</strong> — designed, developed,
-          and deployed on Vercel. Hand-written HTML, CSS, and JavaScript;
-          built for speed, accessibility, and a calm reading experience
-          across devices.
+          Hand-written HTML, CSS, and JavaScript, deployed on Vercel.
+          No framework, no build step.
         </p>
         <div class="hero-actions">
           <a href="experience.html" class="cta is-primary">See experience</a>
@@ -181,7 +146,7 @@
       </div>
     </footer>
 
-    <script src="./script.js?v=10"></script>
+    <script src="./script.js?v=11"></script>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>

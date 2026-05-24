@@ -12,7 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css?v=10" />
+    <link rel="stylesheet" href="./style.css?v=11" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   </head>
   <body>
@@ -37,7 +37,7 @@
           <a href="projects.html" class="is-active">Work</a>
           <a href="experience.html">Experience</a>
           <a href="about.html">About</a>
-          <a href="skills.html">Practice</a>
+          <a href="skills.html">Skills</a>
           <a href="contact.html">Contact</a>
           <a href="resume.pdf" target="_blank" rel="noreferrer" class="ghost-link">Résumé&nbsp;↗</a>
         </nav>
@@ -125,11 +125,23 @@
         </section>
 
         <section class="case-block">
+          <h2>My role</h2>
+          <p>
+            Three-person team (Justin Tan, Vincent Zhao, me). I built the
+            frontend and the scoring engine in vanilla JS — parsing two
+            static JSON files (industry requirements + SFU course
+            descriptions), running fuzzy string matching to link skill
+            names to course titles, and rendering the readiness score and
+            gap list in the DOM. Teammates handled data collection and
+            the Devpost write-up.
+          </p>
+        </section>
+
+        <section class="case-block">
           <h2>What it accomplished</h2>
           <ul>
-            <li>Calculated a readiness score that turns ambient anxiety into a concrete plan.</li>
-            <li>Surfaced direct documentation links so students could close gaps the same day.</li>
-            <li>Shipped a functional product end-to-end inside a 24-hour window.</li>
+            <li>Working dashboard shipped in 24 hours — no framework, no build step.</li>
+            <li>Readiness score + doc links generated from real course/skill data.</li>
           </ul>
         </section>
 
@@ -155,7 +167,7 @@
       </div>
     </footer>
 
-    <script src="./script.js?v=10"></script>
+    <script src="./script.js?v=11"></script>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
