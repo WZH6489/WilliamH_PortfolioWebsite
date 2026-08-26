@@ -5,56 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Respite — Project · William Huang</title>
     <meta name="description" content="Respite — an iOS digital wellness app built in Swift inside SFU Surge's StormForge 2026 cohort." />
-    <meta name="theme-color" content="#14110e" />
+    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css?v=11" />
+    <link rel="stylesheet" href="./style.css?v=12" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>document.documentElement.classList.add("js");</script>
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>
 
-    <header class="topbar">
-      <div class="topbar-inner">
-        <a href="index.html" class="mark" aria-label="William Huang — home">
-          <span class="mark-name">William Huang</span>
-          <span class="mark-role">SFU–ZJU · CS &amp; Fintech</span>
+    <header class="site-head">
+      <div class="head-inner">
+        <a href="index.html" class="brand" aria-label="William Huang — home">
+          William Huang <span class="brand-role">CS · Fintech</span>
         </a>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="projects.html" class="nav-link is-active">Work</a>
+          <a href="experience.html" class="nav-link">Experience</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="skills.html" class="nav-link">Skills</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="resume.pdf" target="_blank" rel="noreferrer" class="nav-link nav-cta">Résumé&nbsp;↗</a>
+        </nav>
         <button
           class="nav-toggle"
           type="button"
           aria-expanded="false"
-          aria-controls="primary-nav"
-          aria-label="Open menu"
+          aria-controls="site-nav"
+          aria-label="Menu"
         >
-          <span></span>
+          <span></span><span></span>
         </button>
-        <nav id="primary-nav" class="primary-nav" aria-label="Primary">
-          <a href="projects.html" class="is-active">Work</a>
-          <a href="experience.html">Experience</a>
-          <a href="about.html">About</a>
-          <a href="skills.html">Skills</a>
-          <a href="contact.html">Contact</a>
-          <a href="resume.pdf" target="_blank" rel="noreferrer" class="ghost-link">Résumé&nbsp;↗</a>
-        </nav>
       </div>
     </header>
 
     <main id="main" class="case">
-      <a href="projects.html" class="case-back">←&nbsp; Back to work</a>
+      <a href="projects.html" class="case-back">Back to work</a>
 
-      <p class="case-eyebrow">Project · StormForge 2026 · SFU Surge cohort</p>
-      <h1>Respite</h1>
-      <p class="case-lede">
+      <p class="case-eyebrow" data-reveal>Project · StormForge 2026 · SFU Surge cohort</p>
+      <h1>
+        <span class="line" style="--l: 0"><span class="line-inner">Respite</span></span>
+      </h1>
+      <p class="case-lede" data-reveal style="--d: 1">
         A native iOS digital wellness app — built entirely in Swift with a
-        team of four mentor-guided developers — that uses on-device signals
-        to nudge people toward calmer, more deliberate phone use.
+        team of four mentor-guided developers — that uses on-device signals to
+        nudge people toward calmer, more deliberate phone use.
       </p>
-      <ul class="case-tech">
+      <ul class="case-tech" data-reveal style="--d: 2">
         <li>Swift</li>
         <li>Xcode</li>
         <li>Liquid Glass</li>
@@ -64,7 +67,7 @@
         <li>Live Activities</li>
       </ul>
 
-      <figure class="case-hero is-placeholder" aria-hidden="true">
+      <figure class="case-hero is-placeholder" aria-hidden="true" data-reveal style="--d: 3">
         <div class="placeholder-mark">
           <span class="pm-glyph">Respite</span>
           <span class="pm-tag">iOS · Swift · 2026</span>
@@ -72,44 +75,48 @@
       </figure>
 
       <div class="case-body">
-        <section class="case-block">
+        <section class="case-block" data-reveal>
           <h2>The cohort</h2>
-          <p>
-            Respite was the four-month build I shipped inside the
-            <strong>StormForge 2026 Cohort</strong> at SFU&nbsp;Surge —
-            mentor-guided product work selected from a competitive
-            applicant pool. Our team of four owned design, engineering, and
-            delivery end-to-end, with weekly reviews from industry mentors.
-          </p>
+          <div>
+            <p>
+              Respite was the four-month build I shipped inside the
+              <strong>StormForge 2026 Cohort</strong> at SFU&nbsp;Surge —
+              mentor-guided product work selected from a competitive applicant
+              pool. Our team of four owned design, engineering, and delivery
+              end-to-end, with weekly reviews from industry mentors.
+            </p>
+          </div>
         </section>
 
-        <section class="case-block">
+        <section class="case-block" data-reveal>
           <h2>What it does</h2>
-          <p>
-            Respite is a context-aware digital wellness companion. Rather
-            than blocking apps with a wall of red, it reads in-the-moment
-            signals — your screen time today, recent activity, even the
-            weather outside — and suggests small acts of <em>respite</em>:
-            a walk, a stretch, a breath, a few minutes off-grid.
-          </p>
-          <p>
-            The intent is to replace willpower-driven app blockers with
-            something gentler and more honest about how people actually
-            relate to their phones.
-          </p>
+          <div>
+            <p>
+              Respite is a context-aware digital wellness companion. Rather
+              than blocking apps with a wall of red, it reads in-the-moment
+              signals — your screen time today, recent activity, even the
+              weather outside — and suggests small acts of <em>respite</em>:
+              a walk, a stretch, a breath, a few minutes off-grid.
+            </p>
+            <p>
+              The intent is to replace willpower-driven app blockers with
+              something gentler and more honest about how people actually
+              relate to their phones.
+            </p>
+          </div>
         </section>
 
-        <section class="case-block">
+        <section class="case-block" data-reveal>
           <h2>What I built</h2>
           <ul>
             <li>
               Core iOS application logic in Swift — view models, state
-              management, and the rules engine that turns sensor inputs
-              into actionable suggestions.
+              management, and the rules engine that turns sensor inputs into
+              actionable suggestions.
             </li>
             <li>
-              Liquid Glass UI components built in Xcode — translucent
-              cards, depth-aware blurs, and motion that respects
+              Liquid Glass UI components built in Xcode — translucent cards,
+              depth-aware blurs, and motion that respects
               <code>prefers-reduced-motion</code>.
             </li>
             <li>
@@ -117,21 +124,21 @@
               without leaving the sandbox.
             </li>
             <li>
-              <strong>HealthKit</strong> for active-energy and step
-              context — used to time nudges around real movement.
+              <strong>HealthKit</strong> for active-energy and step context —
+              used to time nudges around real movement.
             </li>
             <li>
-              <strong>WeatherKit</strong> to bias outdoor suggestions
-              against current conditions.
+              <strong>WeatherKit</strong> to bias outdoor suggestions against
+              current conditions.
             </li>
             <li>
-              <strong>Live Activities</strong> for glanceable session
-              feedback on the Lock Screen and Dynamic Island.
+              <strong>Live Activities</strong> for glanceable session feedback
+              on the Lock Screen and Dynamic Island.
             </li>
           </ul>
         </section>
 
-        <section class="case-block">
+        <section class="case-block" data-reveal>
           <h2>What I learned</h2>
           <ul>
             <li>Shipping inside Apple&rsquo;s permissions model — how to ask once, well.</li>
@@ -140,32 +147,38 @@
           </ul>
         </section>
 
-        <section class="case-block">
+        <section class="case-block" data-reveal>
           <h2>Status</h2>
-          <p>
-            Shipped at the April&nbsp;2026 cohort demo. StormForge has
-            wrapped — this case study covers the build as delivered.
-          </p>
+          <div>
+            <p>
+              Shipped at the April&nbsp;2026 cohort demo. StormForge has
+              wrapped — this case study covers the build as delivered.
+            </p>
+          </div>
         </section>
 
-        <div class="case-footer">
+        <div class="case-footer" data-reveal>
           <a href="projects.html" class="cta is-primary">More projects&nbsp;→</a>
         </div>
       </div>
     </main>
 
-    <footer class="bottombar">
-      <div class="bottombar-inner">
-        <span>© <span id="currentYear"></span> William Huang · Vancouver</span>
-        <ul>
-          <li><a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé</a></li>
-        </ul>
+    <footer class="site-foot">
+      <div class="foot-inner">
+        <p class="eyebrow">Get in touch</p>
+        <a class="foot-mail" href="mailto:wihuang5190@outlook.com">wihuang5190@outlook.com</a>
+        <div class="foot-bottom">
+          <span>© <span id="currentYear"></span> William Huang · Vancouver, BC</span>
+          <ul class="foot-links">
+            <li><a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
 
-    <script src="./script.js?v=11"></script>
+    <script src="./script.js?v=12"></script>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>

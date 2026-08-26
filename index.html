@@ -8,97 +8,90 @@
       name="description"
       content="William Huang — first-year CS and fintech student at SFU–ZJU. Projects, experience, and contact."
     />
-    <meta name="theme-color" content="#14110e" />
+    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css?v=11" />
+    <link rel="stylesheet" href="./style.css?v=12" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>document.documentElement.classList.add("js");</script>
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>
 
-    <header class="topbar">
-      <div class="topbar-inner">
-        <a href="index.html" class="mark" aria-label="William Huang — home">
-          <span class="mark-name">William Huang</span>
-          <span class="mark-role">SFU–ZJU · CS &amp; Fintech</span>
+    <header class="site-head">
+      <div class="head-inner">
+        <a href="index.html" class="brand" aria-label="William Huang — home">
+          William Huang <span class="brand-role">CS · Fintech</span>
         </a>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="projects.html" class="nav-link">Work</a>
+          <a href="experience.html" class="nav-link">Experience</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="skills.html" class="nav-link">Skills</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="resume.pdf" target="_blank" rel="noreferrer" class="nav-link nav-cta">Résumé&nbsp;↗</a>
+        </nav>
         <button
           class="nav-toggle"
           type="button"
           aria-expanded="false"
-          aria-controls="primary-nav"
-          aria-label="Open menu"
+          aria-controls="site-nav"
+          aria-label="Menu"
         >
-          <span></span>
+          <span></span><span></span>
         </button>
-        <nav id="primary-nav" class="primary-nav" aria-label="Primary">
-          <a href="projects.html">Work</a>
-          <a href="experience.html">Experience</a>
-          <a href="about.html">About</a>
-          <a href="skills.html">Skills</a>
-          <a href="contact.html">Contact</a>
-          <a href="resume.pdf" target="_blank" rel="noreferrer" class="ghost-link">Résumé&nbsp;↗</a>
-        </nav>
       </div>
     </header>
 
     <main id="main" class="shell">
       <section class="hero" id="top">
-        <div class="status-pill">
+        <div class="status-pill" data-reveal>
           <span class="status-dot" aria-hidden="true"></span>
-          Open to hire
+          Open to summer 2026 internships
         </div>
         <h1 class="display">
-          What I&rsquo;ve been working on.
+          <span class="line" style="--l: 0"><span class="line-inner">Curious builder,</span></span>
+          <span class="line" style="--l: 1"><span class="line-inner">studying <em>computing</em></span></span>
+          <span class="line" style="--l: 2"><span class="line-inner">&amp; <em>finance.</em></span></span>
         </h1>
-        <div class="hero-grid">
-          <p class="lede">
-            I&rsquo;m William — first year at SFU and ZJU, studying
-            computing science and fintech.
-          </p>
-          <ul class="hero-meta">
-            <li><span class="meta-k">Focus</span><span class="meta-v">CS · Fintech</span></li>
-            <li><span class="meta-k">Based</span><span class="meta-v">Vancouver, CA</span></li>
-            <li><span class="meta-k">Status</span><span class="meta-v">Open to hire</span></li>
-          </ul>
-        </div>
-        <div class="hero-actions">
+        <p class="lede" data-reveal style="--d: 3">
+          I&rsquo;m William — first year at SFU and ZJU, studying computing
+          science and fintech. I learn new stacks by shipping real projects,
+          from cohort iOS apps to 12-hour hackathon builds.
+        </p>
+        <div class="actions" data-reveal style="--d: 4">
           <a href="projects.html" class="cta is-primary">View selected work</a>
-          <a href="resume.pdf" target="_blank" rel="noreferrer" class="cta is-external">Download résumé</a>
+          <a href="resume.pdf" target="_blank" rel="noreferrer" class="cta">Download résumé</a>
           <a href="contact.html" class="quiet-link">Get in touch</a>
         </div>
+        <ul class="hero-meta" data-reveal style="--d: 5">
+          <li><span class="meta-k">Focus</span><span class="meta-v">CS · Fintech</span></li>
+          <li><span class="meta-k">Based in</span><span class="meta-v">Vancouver, CA</span></li>
+          <li><span class="meta-k">Currently</span><span class="meta-v">SFU–ZJU dual degree</span></li>
+        </ul>
       </section>
 
       <section class="block" id="work">
-        <header class="block-head">
-          <div>
-            <h2 class="block-title">Selected work</h2>
-          </div>
-          <a href="projects.html" class="quiet-link">All projects</a>
+        <header class="block-head" data-reveal>
+          <h2 class="block-title"><span class="block-num">01</span> Selected work</h2>
+          <a href="projects.html" class="block-more">All projects</a>
         </header>
 
         <ol class="work-list">
-          <li class="work-row">
+          <li class="work-row" data-reveal>
             <a class="work-link" href="case-study-respite.html">
-              <div class="work-thumb is-placeholder" aria-hidden="true">
-                <div class="placeholder-mark">
-                  <span class="pm-glyph">Respite</span>
-                  <span class="pm-tag">iOS · Swift</span>
-                </div>
-              </div>
               <div class="work-meta">
-                <span class="work-num">01 · StormForge 2026 · SFU Surge cohort</span>
+                <span class="work-num">StormForge 2026 · SFU Surge cohort</span>
                 <h3 class="work-title">Respite</h3>
                 <p class="work-desc">
-                  iOS app in Swift (StormForge / SFU Surge). I worked on
-                  the SwiftUI views and HealthKit + Live Activities
-                  integration — Screen Time and WeatherKit fed the
-                  suggestion logic.
+                  iOS app in Swift (StormForge / SFU Surge). I worked on the
+                  SwiftUI views and HealthKit + Live Activities integration —
+                  Screen Time and WeatherKit fed the suggestion logic.
                 </p>
                 <ul class="work-tags">
                   <li>Swift</li>
@@ -106,13 +99,33 @@
                   <li>HealthKit</li>
                   <li>Liquid Glass</li>
                 </ul>
-                <span class="work-cta">View project</span>
+              </div>
+              <div class="work-thumb is-placeholder" aria-hidden="true">
+                <div class="placeholder-mark">
+                  <span class="pm-glyph">Respite</span>
+                  <span class="pm-tag">iOS · Swift</span>
+                </div>
               </div>
             </a>
           </li>
 
-          <li class="work-row">
+          <li class="work-row" data-reveal>
             <a class="work-link" href="case-study.html">
+              <div class="work-meta">
+                <span class="work-num">SystemHacks 2026 · 24h hackathon</span>
+                <h3 class="work-title">Delta</h3>
+                <p class="work-desc">
+                  Vanilla JS dashboard — I wrote the scoring engine that
+                  fuzzy-matches industry skill names against SFU course JSON
+                  and returns a readiness score plus doc links. No framework,
+                  shipped in 24&nbsp;hours.
+                </p>
+                <ul class="work-tags">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
               <div class="work-thumb">
                 <img
                   src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/235/442/datas/original.png"
@@ -121,27 +134,25 @@
                   decoding="async"
                 />
               </div>
-              <div class="work-meta">
-                <span class="work-num">02 · SystemHacks 2026 · 24h Hackathon</span>
-                <h3 class="work-title">Delta</h3>
-                <p class="work-desc">
-                  Vanilla JS dashboard — I wrote the scoring engine that
-                  fuzzy-matches industry skill names against SFU course
-                  JSON and returns a readiness score plus doc links.
-                  No framework, shipped in 24&nbsp;hours.
-                </p>
-                <ul class="work-tags">
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>JavaScript</li>
-                </ul>
-                <span class="work-cta">View project</span>
-              </div>
             </a>
           </li>
 
-          <li class="work-row">
+          <li class="work-row" data-reveal>
             <a class="work-link" href="case-study-sfu-sidequest.html">
+              <div class="work-meta">
+                <span class="work-num">JourneyHacks 2026 · 12h hackathon</span>
+                <h3 class="work-title">SFU SideQuests</h3>
+                <p class="work-desc">
+                  Figma prototype for a campus quest app. I built the
+                  clickable flows (quest picker, add-a-quest, profile) and
+                  pitched it to the judges — 12-hour hackathon, team of three.
+                </p>
+                <ul class="work-tags">
+                  <li>Figma</li>
+                  <li>UI/UX</li>
+                  <li>Canva</li>
+                </ul>
+              </div>
               <div class="work-thumb">
                 <img
                   src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/149/566/datas/original.png"
@@ -150,39 +161,21 @@
                   decoding="async"
                 />
               </div>
-              <div class="work-meta">
-                <span class="work-num">03 · JourneyHacks 2026 · 12h Hackathon</span>
-                <h3 class="work-title">SFU SideQuests</h3>
-                <p class="work-desc">
-                  Figma prototype for a campus quest app. I built the
-                  clickable flows (quest picker, add-a-quest, profile)
-                  and pitched it to the judges — 12-hour hackathon,
-                  team of three.
-                </p>
-                <ul class="work-tags">
-                  <li>Figma</li>
-                  <li>UI/UX</li>
-                  <li>Canva</li>
-                </ul>
-                <span class="work-cta">View project</span>
-              </div>
             </a>
           </li>
         </ol>
       </section>
 
       <section class="block" id="experience">
-        <header class="block-head">
-          <div>
-            <h2 class="block-title">Experience</h2>
-          </div>
-          <a href="experience.html" class="quiet-link">All experience</a>
+        <header class="block-head" data-reveal>
+          <h2 class="block-title"><span class="block-num">02</span> Experience</h2>
+          <a href="experience.html" class="block-more">All experience</a>
         </header>
         <div class="exp-list">
-          <article class="exp-row">
+          <article class="exp-row" data-reveal>
             <div class="exp-when">
               <span class="exp-tag">Past</span>
-              <span class="exp-date">Jan&nbsp;—&nbsp;Apr 2026</span>
+              <span class="exp-date">Jan — Apr 2026</span>
             </div>
             <div class="exp-what">
               <h3>Software Engineer Mentee · StormForge 2026, SFU&nbsp;Surge</h3>
@@ -197,7 +190,7 @@
               </p>
             </div>
           </article>
-          <article class="exp-row">
+          <article class="exp-row" data-reveal>
             <div class="exp-when">
               <span class="exp-tag">Past</span>
               <span class="exp-date">Sept 2023 — Jun 2025</span>
@@ -207,9 +200,9 @@
               <p class="exp-where">Vancouver, BC</p>
               <p>
                 Designed and 3D-printed a custom mechanical arm and pan
-                mechanism, streamlining assembly and reducing hardware
-                failure points. Directed a team rebranding — new
-                merchandise and uniform logos — that contributed to a
+                mechanism, streamlining assembly and reducing hardware failure
+                points. Directed a team rebranding — new merchandise and
+                uniform logos — that contributed to a
                 <strong>$500+ increase in total funding</strong>.
               </p>
             </div>
@@ -218,34 +211,31 @@
       </section>
 
       <section class="block" id="about">
-        <header class="block-head">
-          <div>
-            <h2 class="block-title">About</h2>
-          </div>
-          <a href="about.html" class="quiet-link">Read more</a>
+        <header class="block-head" data-reveal>
+          <h2 class="block-title"><span class="block-num">03</span> About</h2>
+          <a href="about.html" class="block-more">Read more</a>
         </header>
-        <div class="block-grid two">
+        <div class="block-grid two" data-reveal>
           <p class="prose">
-            First-year CS and fintech student at SFU–ZJU. I pick up new
-            stacks through projects — most recently Swift and iOS in
-            SFU Surge&rsquo;s StormForge cohort, plus whatever a hackathon
-            throws at me.
+            First-year CS and fintech student at SFU–ZJU. I pick up new stacks
+            through projects — most recently Swift and iOS in SFU
+            Surge&rsquo;s StormForge cohort, plus whatever a hackathon throws
+            at me.
           </p>
           <ul class="hairline-list">
             <li><span class="dot" aria-hidden="true"></span>Vancouver, BC</li>
             <li><span class="dot" aria-hidden="true"></span>English &amp; Mandarin</li>
+            <li><span class="dot" aria-hidden="true"></span>Open to hire</li>
           </ul>
         </div>
       </section>
 
       <section class="block" id="skills">
-        <header class="block-head">
-          <div>
-            <h2 class="block-title">Skills</h2>
-          </div>
-          <a href="skills.html" class="quiet-link">Full list</a>
+        <header class="block-head" data-reveal>
+          <h2 class="block-title"><span class="block-num">04</span> Skills</h2>
+          <a href="skills.html" class="block-more">Full list</a>
         </header>
-        <div class="skills-cols">
+        <div class="skills-cols" data-reveal>
           <div class="skills-col">
             <h4>Languages</h4>
             <ul>
@@ -279,18 +269,15 @@
       </section>
 
       <section class="block" id="connect">
-        <header class="block-head">
-          <div>
-            <h2 class="block-title">Contact</h2>
-          </div>
-          <a href="contact.html" class="quiet-link">Contact page</a>
+        <header class="block-head" data-reveal>
+          <h2 class="block-title"><span class="block-num">05</span> Contact</h2>
+          <a href="contact.html" class="block-more">Contact page</a>
         </header>
-        <div class="connect-grid">
+        <div class="connect-grid" data-reveal>
           <div class="connect-direct">
             <p class="prose">
-              Open to internships and summer roles. Fastest way to reach
-              me is email or LinkedIn — I usually reply within a day or
-              two.
+              Open to internships and summer roles. Fastest way to reach me is
+              email or LinkedIn — I usually reply within a day or two.
             </p>
             <ul class="quiet-links">
               <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
@@ -300,24 +287,28 @@
           </div>
           <div class="contact-actions">
             <a href="mailto:wihuang5190@outlook.com" class="cta is-primary">Email me</a>
-            <a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer" class="cta is-external">Message on LinkedIn</a>
+            <a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer" class="cta">Message on LinkedIn</a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="bottombar">
-      <div class="bottombar-inner">
-        <span>© <span id="currentYear"></span> William Huang · Vancouver</span>
-        <ul>
-          <li><a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé</a></li>
-        </ul>
+    <footer class="site-foot">
+      <div class="foot-inner">
+        <p class="eyebrow">Get in touch</p>
+        <a class="foot-mail" href="mailto:wihuang5190@outlook.com">wihuang5190@outlook.com</a>
+        <div class="foot-bottom">
+          <span>© <span id="currentYear"></span> William Huang · Vancouver, BC</span>
+          <ul class="foot-links">
+            <li><a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
 
-    <script src="./script.js?v=11"></script>
+    <script src="./script.js?v=12"></script>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>

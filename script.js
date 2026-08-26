@@ -1,45 +1,122 @@
 /* William Huang — Portfolio
-   Small, dependency-free, fast.
-   ------------------------------------------------------------ */
+   Dependency-free interactions: reveals, header, nav, transitions.
+   ------------------------------------------------------------------ */
 
 (function () {
   "use strict";
 
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   /* Footer year */
-  const yearEl = document.getElementById("currentYear");
+  var yearEl = document.getElementById("currentYear");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* Mobile nav toggle */
-  const toggle = document.querySelector(".nav-toggle");
-  const primaryNav = document.querySelector(".primary-nav");
-  if (toggle && primaryNav) {
-    const close = () => {
+  var toggle = document.querySelector(".nav-toggle");
+  var nav = document.querySelector(".site-nav");
+  if (toggle && nav) {
+    var closeNav = function () {
       toggle.setAttribute("aria-expanded", "false");
-      primaryNav.classList.remove("is-open");
+      nav.classList.remove("is-open");
+      document.documentElement.style.overflow = "";
     };
-    const open = () => {
+    var openNav = function () {
       toggle.setAttribute("aria-expanded", "true");
-      primaryNav.classList.add("is-open");
+      nav.classList.add("is-open");
+      document.documentElement.style.overflow = "hidden";
     };
-    toggle.addEventListener("click", () => {
-      const isOpen = toggle.getAttribute("aria-expanded") === "true";
-      if (isOpen) close();
-      else open();
+    toggle.addEventListener("click", function () {
+      var isOpen = toggle.getAttribute("aria-expanded") === "true";
+      if (isOpen) closeNav();
+      else openNav();
     });
-    primaryNav.addEventListener("click", (e) => {
-      const t = e.target;
-      if (t && t.tagName === "A") close();
+    nav.addEventListener("click", function (e) {
+      if (e.target && e.target.tagName === "A") closeNav();
     });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") close();
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeNav();
     });
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 760) close();
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 760) closeNav();
+    });
+  }
+
+  /* Header: hairline once scrolled, hide on scroll down / show on up */
+  var head = document.querySelector(".site-head");
+  if (head) {
+    var lastY = window.scrollY;
+    var onScroll = function () {
+      var y = window.scrollY;
+      head.classList.toggle("is-scrolled", y > 12);
+      if (!reduceMotion) {
+        var navOpen = nav && nav.classList.contains("is-open");
+        if (y > lastY && y > 220 && !navOpen) head.classList.add("is-hidden");
+        else head.classList.remove("is-hidden");
+      }
+      lastY = y;
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+
+  /* Reveal on scroll */
+  var revealEls = document.querySelectorAll("[data-reveal]");
+  if (revealEls.length && "IntersectionObserver" in window && !reduceMotion) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-in");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
+    );
+    revealEls.forEach(function (el) {
+      io.observe(el);
+    });
+  } else {
+    revealEls.forEach(function (el) {
+      el.classList.add("is-in");
+    });
+  }
+
+  /* Page fade transition on internal navigation */
+  if (!reduceMotion) {
+    document.addEventListener("click", function (e) {
+      var a = e.target && e.target.closest ? e.target.closest("a") : null;
+      if (!a) return;
+      var href = a.getAttribute("href");
+      if (
+        !href ||
+        href.charAt(0) === "#" ||
+        a.target === "_blank" ||
+        a.hasAttribute("download") ||
+        href.indexOf("mailto:") === 0 ||
+        href.indexOf("tel:") === 0 ||
+        /^https?:\/\//.test(href) ||
+        /\.pdf($|\?)/.test(href) ||
+        e.metaKey || e.ctrlKey || e.shiftKey || e.altKey ||
+        e.defaultPrevented
+      ) {
+        return;
+      }
+      e.preventDefault();
+      document.body.classList.add("is-leaving");
+      window.setTimeout(function () {
+        window.location.href = href;
+      }, 200);
+    });
+
+    /* Restore state when the page is served from bfcache */
+    window.addEventListener("pageshow", function (e) {
+      if (e.persisted) document.body.classList.remove("is-leaving");
     });
   }
 
   /* Back-to-top button */
-  const btt = document.createElement("button");
+  var btt = document.createElement("button");
   btt.type = "button";
   btt.className = "back-to-top";
   btt.setAttribute("aria-label", "Back to top");
@@ -49,11 +126,11 @@
     "</svg>";
   document.body.appendChild(btt);
 
-  const SHOW_AFTER = 480;
-  let ticking = false;
-  let shown = false;
-  const tick = () => {
-    const next = window.scrollY > SHOW_AFTER;
+  var SHOW_AFTER = 480;
+  var ticking = false;
+  var shown = false;
+  var tick = function () {
+    var next = window.scrollY > SHOW_AFTER;
     if (next !== shown) {
       shown = next;
       btt.classList.toggle("is-shown", shown);
@@ -63,7 +140,7 @@
   tick();
   window.addEventListener(
     "scroll",
-    () => {
+    function () {
       if (!ticking) {
         window.requestAnimationFrame(tick);
         ticking = true;
@@ -72,11 +149,10 @@
     { passive: true }
   );
 
-  btt.addEventListener("click", () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  btt.addEventListener("click", function () {
+    window.scrollTo({ top: 0, left: 0, behavior: reduceMotion ? "auto" : "smooth" });
     if (history.replaceState) {
-      const cleanUrl = window.location.pathname + window.location.search;
-      history.replaceState(null, "", cleanUrl);
+      history.replaceState(null, "", window.location.pathname + window.location.search);
     }
   });
 })();

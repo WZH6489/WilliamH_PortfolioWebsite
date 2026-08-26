@@ -5,62 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Experience — William Huang</title>
     <meta name="description" content="William Huang's experience, cohorts, and education." />
-    <meta name="theme-color" content="#14110e" />
+    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css?v=11" />
+    <link rel="stylesheet" href="./style.css?v=12" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>document.documentElement.classList.add("js");</script>
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>
 
-    <header class="topbar">
-      <div class="topbar-inner">
-        <a href="index.html" class="mark" aria-label="William Huang — home">
-          <span class="mark-name">William Huang</span>
-          <span class="mark-role">SFU–ZJU · CS &amp; Fintech</span>
+    <header class="site-head">
+      <div class="head-inner">
+        <a href="index.html" class="brand" aria-label="William Huang — home">
+          William Huang <span class="brand-role">CS · Fintech</span>
         </a>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="projects.html" class="nav-link">Work</a>
+          <a href="experience.html" class="nav-link is-active">Experience</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="skills.html" class="nav-link">Skills</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="resume.pdf" target="_blank" rel="noreferrer" class="nav-link nav-cta">Résumé&nbsp;↗</a>
+        </nav>
         <button
           class="nav-toggle"
           type="button"
           aria-expanded="false"
-          aria-controls="primary-nav"
-          aria-label="Open menu"
+          aria-controls="site-nav"
+          aria-label="Menu"
         >
-          <span></span>
+          <span></span><span></span>
         </button>
-        <nav id="primary-nav" class="primary-nav" aria-label="Primary">
-          <a href="projects.html">Work</a>
-          <a href="experience.html" class="is-active">Experience</a>
-          <a href="about.html">About</a>
-          <a href="skills.html">Skills</a>
-          <a href="contact.html">Contact</a>
-          <a href="resume.pdf" target="_blank" rel="noreferrer" class="ghost-link">Résumé&nbsp;↗</a>
-        </nav>
       </div>
     </header>
 
     <main id="main" class="shell">
       <section class="hero">
-        <h1 class="display">Experience</h1>
-        <p class="lede">
+        <p class="eyebrow" data-reveal>Experience</p>
+        <h1 class="display">
+          <span class="line" style="--l: 0"><span class="line-inner">Where I&rsquo;ve</span></span>
+          <span class="line" style="--l: 1"><span class="line-inner">put in the <em>hours.</em></span></span>
+        </h1>
+        <p class="lede" data-reveal style="--d: 2">
           School, one cohort build, a robotics team, and a part-time job.
           Early career — keeping it accurate.
         </p>
       </section>
 
       <section class="block">
-        <header class="block-head">
-          <div>
-            <h2 class="block-title">Education</h2>
-          </div>
+        <header class="block-head" data-reveal>
+          <h2 class="block-title"><span class="block-num">01</span> Education</h2>
         </header>
         <div class="exp-list">
-          <article class="exp-row">
+          <article class="exp-row" data-reveal>
             <div class="exp-when">
               <span class="exp-tag">Ongoing</span>
               <span class="exp-date">Sept 2025 — Apr 2030 (Expected)</span>
@@ -80,13 +83,11 @@
       </section>
 
       <section class="block">
-        <header class="block-head">
-          <div>
-            <h2 class="block-title">Roles</h2>
-          </div>
+        <header class="block-head" data-reveal>
+          <h2 class="block-title"><span class="block-num">02</span> Roles</h2>
         </header>
         <div class="exp-list">
-          <article class="exp-row">
+          <article class="exp-row" data-reveal>
             <div class="exp-when">
               <span class="exp-tag">Past</span>
               <span class="exp-date">Jan — Apr 2026</span>
@@ -103,7 +104,7 @@
               </p>
             </div>
           </article>
-          <article class="exp-row">
+          <article class="exp-row" data-reveal>
             <div class="exp-when">
               <span class="exp-tag">Past</span>
               <span class="exp-date">Sept 2023 — Jun 2025</span>
@@ -118,7 +119,7 @@
               </p>
             </div>
           </article>
-          <article class="exp-row">
+          <article class="exp-row" data-reveal>
             <div class="exp-when">
               <span class="exp-tag">Past</span>
               <span class="exp-date">Mar 2022 — Jun 2025</span>
@@ -137,13 +138,11 @@
       </section>
 
       <section class="block">
-        <header class="block-head">
-          <div>
-            <h2 class="block-title">Hackathons &amp; coursework</h2>
-          </div>
+        <header class="block-head" data-reveal>
+          <h2 class="block-title"><span class="block-num">03</span> Hackathons &amp; coursework</h2>
         </header>
         <div class="exp-list">
-          <article class="exp-row">
+          <article class="exp-row" data-reveal>
             <div class="exp-when">
               <span class="exp-tag">Feb 2026</span>
               <span class="exp-date">24 hours</span>
@@ -157,7 +156,7 @@
               </p>
             </div>
           </article>
-          <article class="exp-row">
+          <article class="exp-row" data-reveal>
             <div class="exp-when">
               <span class="exp-tag">Jan 2026</span>
               <span class="exp-date">12 hours</span>
@@ -175,27 +174,33 @@
       </section>
 
       <section class="block">
-        <p class="prose">Open to hire for summer 2026 internships.</p>
-        <div class="hero-actions">
-          <a href="projects.html" class="cta is-primary">See my work</a>
-          <a href="resume.pdf" target="_blank" rel="noreferrer" class="cta is-external">Download résumé</a>
-          <a href="contact.html" class="quiet-link">Get in touch</a>
+        <div data-reveal>
+          <p class="prose">Open to hire for summer 2026 internships.</p>
+          <div class="actions" style="margin-top: 2rem">
+            <a href="projects.html" class="cta is-primary">See my work</a>
+            <a href="resume.pdf" target="_blank" rel="noreferrer" class="cta">Download résumé</a>
+            <a href="contact.html" class="quiet-link">Get in touch</a>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="bottombar">
-      <div class="bottombar-inner">
-        <span>© <span id="currentYear"></span> William Huang · Vancouver</span>
-        <ul>
-          <li><a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé</a></li>
-        </ul>
+    <footer class="site-foot">
+      <div class="foot-inner">
+        <p class="eyebrow">Get in touch</p>
+        <a class="foot-mail" href="mailto:wihuang5190@outlook.com">wihuang5190@outlook.com</a>
+        <div class="foot-bottom">
+          <span>© <span id="currentYear"></span> William Huang · Vancouver, BC</span>
+          <ul class="foot-links">
+            <li><a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
 
-    <script src="./script.js?v=11"></script>
+    <script src="./script.js?v=12"></script>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>

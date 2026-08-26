@@ -5,139 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Delta — Project · William Huang</title>
     <meta name="description" content="Delta — a career-readiness dashboard built for SystemHacks 2026." />
-    <meta name="theme-color" content="#14110e" />
+    <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131210" media="(prefers-color-scheme: dark)" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./style.css?v=11" />
+    <link rel="stylesheet" href="./style.css?v=12" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script>document.documentElement.classList.add("js");</script>
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to content</a>
 
-    <header class="topbar">
-      <div class="topbar-inner">
-        <a href="index.html" class="mark" aria-label="William Huang — home">
-          <span class="mark-name">William Huang</span>
-          <span class="mark-role">SFU–ZJU · CS &amp; Fintech</span>
+    <header class="site-head">
+      <div class="head-inner">
+        <a href="index.html" class="brand" aria-label="William Huang — home">
+          William Huang <span class="brand-role">CS · Fintech</span>
         </a>
+        <nav class="site-nav" id="site-nav" aria-label="Primary">
+          <a href="projects.html" class="nav-link is-active">Work</a>
+          <a href="experience.html" class="nav-link">Experience</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="skills.html" class="nav-link">Skills</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="resume.pdf" target="_blank" rel="noreferrer" class="nav-link nav-cta">Résumé&nbsp;↗</a>
+        </nav>
         <button
           class="nav-toggle"
           type="button"
           aria-expanded="false"
-          aria-controls="primary-nav"
-          aria-label="Open menu"
+          aria-controls="site-nav"
+          aria-label="Menu"
         >
-          <span></span>
+          <span></span><span></span>
         </button>
-        <nav id="primary-nav" class="primary-nav" aria-label="Primary">
-          <a href="projects.html" class="is-active">Work</a>
-          <a href="experience.html">Experience</a>
-          <a href="about.html">About</a>
-          <a href="skills.html">Skills</a>
-          <a href="contact.html">Contact</a>
-          <a href="resume.pdf" target="_blank" rel="noreferrer" class="ghost-link">Résumé&nbsp;↗</a>
-        </nav>
       </div>
     </header>
 
     <main id="main" class="case">
-      <a href="projects.html" class="case-back">←&nbsp; Back to work</a>
+      <a href="projects.html" class="case-back">Back to work</a>
 
-      <p class="case-eyebrow">Project · SystemHacks 2026 · 24h Hackathon</p>
-      <h1>Delta</h1>
-      <p class="case-lede">
-        A career-readiness dashboard that scores how prepared a student is
-        for current industry roles, and links them directly to the
-        documentation that closes the gap.
+      <p class="case-eyebrow" data-reveal>Project · SystemHacks 2026 · 24h hackathon</p>
+      <h1>
+        <span class="line" style="--l: 0"><span class="line-inner">Delta</span></span>
+      </h1>
+      <p class="case-lede" data-reveal style="--d: 1">
+        A career-readiness dashboard that scores how prepared a student is for
+        current industry roles, and links them directly to the documentation
+        that closes the gap.
       </p>
-      <ul class="case-tech">
+      <ul class="case-tech" data-reveal style="--d: 2">
         <li>HTML</li>
         <li>CSS</li>
         <li>JavaScript</li>
       </ul>
-      <div class="case-links">
+      <div class="case-links" data-reveal style="--d: 3">
         <a href="https://devpost.com/software/delta-lkmf4y" class="cta" target="_blank" rel="noopener noreferrer">View on Devpost&nbsp;↗</a>
       </div>
 
-      <figure class="case-hero">
+      <figure class="case-hero" data-reveal>
         <img src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/004/235/442/datas/original.png" alt="Delta career-readiness dashboard" loading="lazy" decoding="async" />
       </figure>
 
       <div class="case-body">
-        <section class="case-block">
+        <section class="case-block" data-reveal>
           <h2>Inspiration</h2>
-          <p>
-            The inspiration for the project was the growing &ldquo;university
-            lag&rdquo; — the gap between the rapid pace of the technology
-            industry and traditional curriculum. Many students graduate
-            with a degree but lack the specific, modern skills required for
-            current roles. By analysing the gap between SFU&rsquo;s courses
-            and current industry demands, the project lets students take
-            control of their own preparation.
-          </p>
-          <p>
-            We were inspired by the SFU courses API and wanted to find a
-            way to use it in our project. We were also unsure how to plan
-            future courses against job hunting, so we built a dashboard
-            that surfaces which skills are in demand and which courses
-            offer them — blending function and a quiet interface.
-          </p>
+          <div>
+            <p>
+              The inspiration for the project was the growing &ldquo;university
+              lag&rdquo; — the gap between the rapid pace of the technology
+              industry and traditional curriculum. Many students graduate with
+              a degree but lack the specific, modern skills required for
+              current roles. By analysing the gap between SFU&rsquo;s courses
+              and current industry demands, the project lets students take
+              control of their own preparation.
+            </p>
+            <p>
+              We were inspired by the SFU courses API and wanted to find a way
+              to use it in our project. We were also unsure how to plan future
+              courses against job hunting, so we built a dashboard that
+              surfaces which skills are in demand and which courses offer
+              them — blending function and a quiet interface.
+            </p>
+          </div>
         </section>
 
-        <section class="case-block">
+        <section class="case-block" data-reveal>
           <h2>What it does</h2>
-          <p>
-            Delta is a career-readiness dashboard that helps students
-            bridge the gap between their academic studies and the
-            technology industry. Users select a career path and compare
-            industry requirements across years — specifically, the shift
-            into 2026.
-          </p>
-          <p>
-            By cross-referencing those professional demands with SFU&rsquo;s
-            course database, the tool performs an automated gap analysis:
-            which skills are covered, which require independent study. It
-            ends with a quantitative readiness score and direct links to
-            the official documentation for the missing skills.
-          </p>
+          <div>
+            <p>
+              Delta is a career-readiness dashboard that helps students bridge
+              the gap between their academic studies and the technology
+              industry. Users select a career path and compare industry
+              requirements across years — specifically, the shift into 2026.
+            </p>
+            <p>
+              By cross-referencing those professional demands with SFU&rsquo;s
+              course database, the tool performs an automated gap analysis:
+              which skills are covered, which require independent study. It
+              ends with a quantitative readiness score and direct links to the
+              official documentation for the missing skills.
+            </p>
+          </div>
         </section>
 
-        <section class="case-block">
+        <section class="case-block" data-reveal>
           <h2>How we built it</h2>
-          <p>
-            Hand-written HTML, CSS, and JavaScript — no framework, no
-            build step. The core logic is a small engine that processes
-            JSON datasets for years of job requirements and university
-            course descriptions, with a readiness scoring algorithm at the
-            heart of it.
-          </p>
-          <p>
-            We implemented fuzzy string matching to connect industry terms
-            with academic course titles so minor naming differences
-            didn&rsquo;t produce false gaps. The interface uses custom CSS
-            to create a calm, dashboard-like environment with progress
-            bars and clear data cards for comparison.
-          </p>
+          <div>
+            <p>
+              Hand-written HTML, CSS, and JavaScript — no framework, no build
+              step. The core logic is a small engine that processes JSON
+              datasets for years of job requirements and university course
+              descriptions, with a readiness scoring algorithm at the heart of
+              it.
+            </p>
+            <p>
+              We implemented fuzzy string matching to connect industry terms
+              with academic course titles so minor naming differences
+              didn&rsquo;t produce false gaps. The interface uses custom CSS to
+              create a calm, dashboard-like environment with progress bars and
+              clear data cards for comparison.
+            </p>
+          </div>
         </section>
 
-        <section class="case-block">
+        <section class="case-block" data-reveal>
           <h2>My role</h2>
-          <p>
-            Three-person team (Justin Tan, Vincent Zhao, me). I built the
-            frontend and the scoring engine in vanilla JS — parsing two
-            static JSON files (industry requirements + SFU course
-            descriptions), running fuzzy string matching to link skill
-            names to course titles, and rendering the readiness score and
-            gap list in the DOM. Teammates handled data collection and
-            the Devpost write-up.
-          </p>
+          <div>
+            <p>
+              Three-person team (Justin Tan, Vincent Zhao, me). I built the
+              frontend and the scoring engine in vanilla JS — parsing two
+              static JSON files (industry requirements + SFU course
+              descriptions), running fuzzy string matching to link skill names
+              to course titles, and rendering the readiness score and gap list
+              in the DOM. Teammates handled data collection and the Devpost
+              write-up.
+            </p>
+          </div>
         </section>
 
-        <section class="case-block">
+        <section class="case-block" data-reveal>
           <h2>What it accomplished</h2>
           <ul>
             <li>Working dashboard shipped in 24 hours — no framework, no build step.</li>
@@ -145,29 +155,35 @@
           </ul>
         </section>
 
-        <section class="case-block">
+        <section class="case-block" data-reveal>
           <h2>Team</h2>
-          <p>Justin Tan · William Huang · Vincent Zhao</p>
+          <div>
+            <p>Justin Tan · William Huang · Vincent Zhao</p>
+          </div>
         </section>
 
-        <div class="case-footer">
+        <div class="case-footer" data-reveal>
           <a href="https://devpost.com/software/delta-lkmf4y" class="cta is-primary" target="_blank" rel="noopener noreferrer">View project on Devpost&nbsp;↗</a>
         </div>
       </div>
     </main>
 
-    <footer class="bottombar">
-      <div class="bottombar-inner">
-        <span>© <span id="currentYear"></span> William Huang · Vancouver</span>
-        <ul>
-          <li><a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-          <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé</a></li>
-        </ul>
+    <footer class="site-foot">
+      <div class="foot-inner">
+        <p class="eyebrow">Get in touch</p>
+        <a class="foot-mail" href="mailto:wihuang5190@outlook.com">wihuang5190@outlook.com</a>
+        <div class="foot-bottom">
+          <span>© <span id="currentYear"></span> William Huang · Vancouver, BC</span>
+          <ul class="foot-links">
+            <li><a href="https://github.com/WZH6489" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/william-huang-569197310" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="resume.pdf" target="_blank" rel="noreferrer">Résumé</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
 
-    <script src="./script.js?v=11"></script>
+    <script src="./script.js?v=12"></script>
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>
