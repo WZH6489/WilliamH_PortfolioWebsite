@@ -82,39 +82,6 @@
     });
   }
 
-  /* Page fade transition on internal navigation */
-  if (!reduceMotion) {
-    document.addEventListener("click", function (e) {
-      var a = e.target && e.target.closest ? e.target.closest("a") : null;
-      if (!a) return;
-      var href = a.getAttribute("href");
-      if (
-        !href ||
-        href.charAt(0) === "#" ||
-        a.target === "_blank" ||
-        a.hasAttribute("download") ||
-        href.indexOf("mailto:") === 0 ||
-        href.indexOf("tel:") === 0 ||
-        /^https?:\/\//.test(href) ||
-        /\.pdf($|\?)/.test(href) ||
-        e.metaKey || e.ctrlKey || e.shiftKey || e.altKey ||
-        e.defaultPrevented
-      ) {
-        return;
-      }
-      e.preventDefault();
-      document.body.classList.add("is-leaving");
-      window.setTimeout(function () {
-        window.location.href = href;
-      }, 200);
-    });
-
-    /* Restore state when the page is served from bfcache */
-    window.addEventListener("pageshow", function (e) {
-      if (e.persisted) document.body.classList.remove("is-leaving");
-    });
-  }
-
   /* Back-to-top button */
   var btt = document.createElement("button");
   btt.type = "button";

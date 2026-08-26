@@ -1,20 +1,20 @@
 /* ------------------------------------------------------------------
    William Huang — Portfolio
-   Minimal editorial system. No dependencies, no build step.
+   Dark editorial system. No dependencies, no build step.
    ------------------------------------------------------------------ */
 
 /* 1. Tokens --------------------------------------------------------- */
 
 :root {
-  --bg: #fafaf7;
-  --bg-soft: #f2f1ec;
-  --ink: #1a1915;
-  --ink-2: #605d54;
-  --ink-3: #97948a;
-  --line: rgba(26, 25, 21, 0.14);
-  --line-soft: rgba(26, 25, 21, 0.08);
-  --accent: #b4441c;
-  --accent-soft: rgba(180, 68, 28, 0.09);
+  --bg: #0f0e0c;
+  --bg-soft: #16140f;
+  --ink: #eae6dc;
+  --ink-2: #a09c8f;
+  --ink-3: #676358;
+  --line: rgba(234, 230, 220, 0.16);
+  --line-soft: rgba(234, 230, 220, 0.08);
+  --accent: #e08544;
+  --accent-soft: rgba(224, 133, 68, 0.1);
 
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
@@ -26,20 +26,6 @@
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --dur: 0.7s;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #131210;
-    --bg-soft: #1b1a17;
-    --ink: #edebe4;
-    --ink-2: #a5a299;
-    --ink-3: #6f6c63;
-    --line: rgba(237, 235, 228, 0.16);
-    --line-soft: rgba(237, 235, 228, 0.08);
-    --accent: #e0703f;
-    --accent-soft: rgba(224, 112, 63, 0.12);
-  }
 }
 
 /* 2. Reset & base --------------------------------------------------- */
@@ -55,6 +41,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  background: var(--bg);
 }
 
 body {
@@ -69,6 +56,17 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+/* Film grain over everything — the texture that keeps flat panels alive */
+body::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: 2000;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.05;
 }
 
 ::selection {
@@ -117,14 +115,8 @@ strong {
   font-weight: 600;
 }
 
-/* Page enter / exit fade */
 .js body {
   animation: page-in 0.5s var(--ease-out) both;
-}
-
-body.is-leaving {
-  opacity: 0;
-  transition: opacity 0.22s ease;
 }
 
 @keyframes page-in {
@@ -140,7 +132,7 @@ body.is-leaving {
   position: absolute;
   top: -100%;
   left: 1rem;
-  z-index: 200;
+  z-index: 3000;
   background: var(--ink);
   color: var(--bg);
   padding: 0.5rem 1rem;
@@ -185,6 +177,7 @@ body.is-leaving {
 .display em {
   letter-spacing: -0.01em;
   margin-right: 0.03em;
+  color: var(--accent);
 }
 
 .lede {
@@ -209,7 +202,6 @@ body.is-leaving {
   color: var(--ink);
 }
 
-/* Animated inline link */
 .u-link,
 .inline-link {
   color: var(--ink);
@@ -243,7 +235,6 @@ body.is-leaving {
   transform: none;
 }
 
-/* Hero line mask reveal */
 .line {
   display: block;
   overflow: hidden;
@@ -276,10 +267,6 @@ body.is-leaving {
     animation: none;
   }
 
-  body.is-leaving {
-    opacity: 1;
-  }
-
   .js [data-reveal] {
     opacity: 1;
     transform: none;
@@ -305,7 +292,7 @@ body.is-leaving {
   position: fixed;
   inset: 0 0 auto;
   z-index: 100;
-  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -415,7 +402,6 @@ body.is-leaving {
   color: var(--bg);
 }
 
-/* Mobile toggle */
 .nav-toggle {
   display: none;
   z-index: 120;
@@ -512,11 +498,33 @@ body.is-leaving {
 }
 
 .hero {
+  position: relative;
   padding-top: clamp(8rem, 20vh, 12rem);
   padding-bottom: clamp(4rem, 9vh, 7rem);
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+/* Warm glow bleeding in from the top corner */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -15%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 780px;
+  max-height: 780px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(224, 133, 68, 0.13),
+    rgba(224, 133, 68, 0.04) 45%,
+    transparent 68%
+  );
+  pointer-events: none;
+  z-index: -1;
 }
 
 .hero .lede {
@@ -577,7 +585,6 @@ body.is-leaving {
   transform: translateX(4px);
 }
 
-/* Status pill */
 .status-pill {
   display: inline-flex;
   align-items: center;
@@ -591,6 +598,7 @@ body.is-leaving {
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 0.45rem 1rem;
+  background: color-mix(in srgb, var(--bg-soft) 70%, transparent);
 }
 
 .status-dot {
@@ -622,7 +630,6 @@ body.is-leaving {
   }
 }
 
-/* Hero meta strip */
 .hero-meta {
   display: flex;
   flex-wrap: wrap;
@@ -650,7 +657,6 @@ body.is-leaving {
   font-weight: 500;
 }
 
-/* CTAs */
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -695,17 +701,17 @@ body.is-leaving {
 }
 
 .cta.is-primary {
-  background: var(--ink);
-  border-color: var(--ink);
+  background: var(--accent);
+  border-color: var(--accent);
   color: var(--bg);
 }
 
 .cta.is-primary::before {
-  background: var(--accent);
+  background: var(--ink);
 }
 
 .cta.is-primary:hover {
-  border-color: var(--accent);
+  border-color: var(--ink);
 }
 
 .quiet-link {
@@ -815,7 +821,6 @@ body.is-leaving {
 }
 
 .work-link:hover .work-tags li {
-  border-color: var(--line);
   color: var(--ink);
 }
 
@@ -827,18 +832,20 @@ body.is-leaving {
   border: 1px solid var(--line-soft);
 }
 
+/* Muted until you commit to it */
 .work-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s var(--ease-out);
+  filter: grayscale(0.7) contrast(1.02) brightness(0.88);
+  transition: transform 0.7s var(--ease-out), filter 0.5s ease;
 }
 
 .work-link:hover .work-thumb img {
   transform: scale(1.045);
+  filter: none;
 }
 
-/* Placeholder thumb (no screenshot yet) */
 .work-thumb.is-placeholder,
 .case-hero.is-placeholder {
   display: flex;
@@ -1122,40 +1129,16 @@ body.is-leaving {
   }
 }
 
-/* Big footer */
+/* Footer — compact */
 .site-foot {
   margin-top: clamp(4rem, 10vh, 7rem);
   border-top: 1px solid var(--line);
-  background: var(--bg-soft);
 }
 
 .foot-inner {
   max-width: var(--shell);
   margin: 0 auto;
-  padding: clamp(3.5rem, 8vh, 5.5rem) var(--gutter) 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-}
-
-.foot-mail {
-  font-size: clamp(1.5rem, 4.5vw, 3rem);
-  font-weight: 500;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-  align-self: flex-start;
-  background-image: linear-gradient(var(--accent), var(--accent));
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  background-size: 0% 2px;
-  padding-bottom: 4px;
-  transition: background-size 0.45s var(--ease-out), color 0.3s ease;
-  overflow-wrap: anywhere;
-}
-
-.foot-mail:hover {
-  color: var(--accent);
-  background-size: 100% 2px;
+  padding: 2rem var(--gutter);
 }
 
 .foot-bottom {
@@ -1164,8 +1147,6 @@ body.is-leaving {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  border-top: 1px solid var(--line-soft);
-  padding-top: 1.5rem;
   font-size: 0.8rem;
   color: var(--ink-3);
 }
@@ -1187,11 +1168,32 @@ body.is-leaving {
 /* 11. Case study ---------------------------------------------------- */
 
 .case {
+  position: relative;
   width: 100%;
   max-width: 880px;
   margin: 0 auto;
   padding: clamp(7.5rem, 18vh, 10rem) var(--gutter) 0;
   flex: 1;
+}
+
+.case::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -20%;
+  width: 55vw;
+  height: 55vw;
+  max-width: 700px;
+  max-height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(224, 133, 68, 0.1),
+    rgba(224, 133, 68, 0.03) 45%,
+    transparent 68%
+  );
+  pointer-events: none;
+  z-index: -1;
 }
 
 .case-back {
@@ -1403,7 +1405,7 @@ body.is-leaving {
   height: 2.75rem;
   border-radius: 50%;
   border: 1px solid var(--line);
-  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   display: flex;
